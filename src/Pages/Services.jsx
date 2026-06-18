@@ -335,8 +335,8 @@ const Services = () => {
 
       {/* Booking Form Modal Overlay */}
       {selectedService && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 animate-fade-in">
-          <div className="bg-white rounded-card p-6 w-full max-w-md relative shadow-high">
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4 py-6 animate-fade-in">
+          <div className="bg-white rounded-card p-6 sm:p-9 w-full max-w-2xl max-h-[92vh] overflow-y-auto relative shadow-high">
             
             {/* Close */}
             <button
@@ -362,22 +362,22 @@ const Services = () => {
               </div>
             ) : (
               /* Core Form */
-              <form onSubmit={handleBookSubmit} className="space-y-4">
-                <div className="space-y-1">
-                  <h3 className="font-heading font-bold text-brown-dark text-lg leading-tight">
+              <form onSubmit={handleBookSubmit} className="space-y-6">
+                <div className="space-y-1.5 pr-8">
+                  <h3 className="font-heading font-bold text-brown-dark text-xl sm:text-2xl leading-tight">
                     {t('bookService')}: {selectedService.title}
                   </h3>
                   {selectedService.id === 'boarding' && (
                     <p className="font-bold text-primary text-sm">250.000đ/ngày</p>
                   )}
-                  <p className="text-[11px] text-muted">
+                  <p className="text-xs sm:text-sm text-muted">
                     {t('fillGroomingForm')}
                   </p>
                 </div>
 
-                <div className="space-y-3">
-                  <div className="space-y-1">
-                    <label htmlFor="book-name" className="block text-[11px] font-semibold text-brown-dark">{t('yourName')}</label>
+                <div className="space-y-5">
+                  <div className="space-y-2">
+                    <label htmlFor="book-name" className="block text-xs font-semibold text-brown-dark">{t('yourName')}</label>
                     <input
                       id="book-name"
                       type="text"
@@ -385,12 +385,12 @@ const Services = () => {
                       placeholder="e.g. John Doe"
                       value={formData.name}
                       onChange={e => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-4 py-2 text-xs outline-none focus:border-primary focus:bg-white"
+                      className="w-full h-12 sm:h-14 bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-5 text-sm outline-none focus:border-primary focus:bg-white"
                     />
                   </div>
 
-                  <div className="space-y-1">
-                    <label htmlFor="book-phone" className="block text-[11px] font-semibold text-brown-dark">{t('phoneNum')}</label>
+                  <div className="space-y-2">
+                    <label htmlFor="book-phone" className="block text-xs font-semibold text-brown-dark">{t('phoneNum')}</label>
                     <input
                       id="book-phone"
                       type="tel"
@@ -398,7 +398,7 @@ const Services = () => {
                       placeholder="e.g. 0901234567"
                       value={formData.phone}
                       onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-4 py-2 text-xs outline-none focus:border-primary focus:bg-white"
+                      className="w-full h-12 sm:h-14 bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-5 text-sm outline-none focus:border-primary focus:bg-white"
                     />
                   </div>
 
@@ -406,7 +406,7 @@ const Services = () => {
                     <>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-1">
-                          <label htmlFor="book-date" className="block text-[11px] font-semibold text-brown-dark">{t('checkInDate')}</label>
+                          <label htmlFor="book-date" className="block text-xs font-semibold text-brown-dark">{t('checkInDate')}</label>
                           <input
                             id="book-date"
                             type="date"
@@ -414,11 +414,11 @@ const Services = () => {
                             min={new Date().toISOString().split('T')[0]}
                             value={formData.date}
                             onChange={e => setFormData({ ...formData, date: e.target.value })}
-                            className="w-full bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-4 py-2 text-xs outline-none focus:border-primary focus:bg-white text-brown-dark"
+                            className="w-full h-12 sm:h-14 bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-5 text-sm outline-none focus:border-primary focus:bg-white text-brown-dark"
                           />
                         </div>
                         <div className="space-y-1">
-                          <label htmlFor="book-checkout-date" className="block text-[11px] font-semibold text-brown-dark">{t('checkOutDate')}</label>
+                          <label htmlFor="book-checkout-date" className="block text-xs font-semibold text-brown-dark">{t('checkOutDate')}</label>
                           <input
                             id="book-checkout-date"
                             type="date"
@@ -426,7 +426,7 @@ const Services = () => {
                             min={formData.date || new Date().toISOString().split('T')[0]}
                             value={formData.checkoutDate}
                             onChange={e => setFormData({ ...formData, checkoutDate: e.target.value })}
-                            className="w-full bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-4 py-2 text-xs outline-none focus:border-primary focus:bg-white text-brown-dark"
+                            className="w-full h-12 sm:h-14 bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-5 text-sm outline-none focus:border-primary focus:bg-white text-brown-dark"
                           />
                         </div>
                       </div>
@@ -491,7 +491,7 @@ const Services = () => {
                     <>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-1">
-                          <label htmlFor="book-date" className="block text-[11px] font-semibold text-brown-dark">{t('preferredDate')}</label>
+                          <label htmlFor="book-date" className="block text-xs font-semibold text-brown-dark">{t('preferredDate')}</label>
                           <input
                             id="book-date"
                             type="date"
@@ -503,11 +503,11 @@ const Services = () => {
                               setFormData({ ...formData, date: newDate, timeSlot: '' })
                               loadBookedSlots(newDate, selectedService.id)
                             }}
-                            className="w-full bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-4 py-2 text-xs outline-none focus:border-primary focus:bg-white text-brown-dark"
+                            className="w-full h-12 sm:h-14 bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-5 text-sm outline-none focus:border-primary focus:bg-white text-brown-dark"
                           />
                         </div>
                         <div className="space-y-1">
-                          <label htmlFor="book-time" className="block text-[11px] font-semibold text-brown-dark">
+                          <label htmlFor="book-time" className="block text-xs font-semibold text-brown-dark">
                             {t('timeSlot')}
                             {loadingSlots && <span className="ml-2 text-muted font-normal">(đang tải...)</span>}
                           </label>
@@ -516,7 +516,7 @@ const Services = () => {
                             required
                             value={formData.timeSlot}
                             onChange={e => setFormData({ ...formData, timeSlot: e.target.value })}
-                            className="w-full bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-4 py-2 text-xs outline-none focus:border-primary focus:bg-white text-brown-dark"
+                            className="w-full h-12 sm:h-14 bg-[#f8f9fa] border border-[#eeeeee] rounded-pill px-5 text-sm outline-none focus:border-primary focus:bg-white text-brown-dark"
                             disabled={loadingSlots}
                           >
                             <option value="">{t('selectTimeSlot')}</option>
@@ -572,24 +572,24 @@ const Services = () => {
                     </>
                   )}
 
-                  <div className="space-y-1">
-                    <label htmlFor="book-notes" className="block text-[11px] font-semibold text-brown-dark">{t('extraNotes')}</label>
+                  <div className="space-y-2">
+                    <label htmlFor="book-notes" className="block text-xs font-semibold text-brown-dark">{t('extraNotes')}</label>
                     <textarea
                       id="book-notes"
-                      rows="3"
+                      rows="4"
                       placeholder="e.g. Husky puppy, 3 months old, very energetic..."
                       value={formData.notes}
                       onChange={e => setFormData({ ...formData, notes: e.target.value })}
-                      className="w-full bg-[#f8f9fa] border border-[#eeeeee] rounded-card px-4 py-2.5 text-xs outline-none focus:border-primary focus:bg-white resize-none"
+                      className="w-full min-h-32 bg-[#f8f9fa] border border-[#eeeeee] rounded-card px-5 py-4 text-sm outline-none focus:border-primary focus:bg-white resize-none"
                     />
                   </div>
                 </div>
 
-                <div className="pt-2 flex gap-3">
+                <div className="pt-2 flex gap-4">
                   <button
                     type="button"
                     onClick={() => setSelectedService(null)}
-                    className="flex-1 py-2 rounded-pill border border-border-light text-xs font-semibold text-brown-dark hover:bg-bg-light transition-colors"
+                    className="flex-1 py-3.5 rounded-pill border border-border-light text-sm font-semibold text-brown-dark hover:bg-bg-light transition-colors"
                   >
                     {t('cancel')}
                   </button>
@@ -599,7 +599,7 @@ const Services = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="flex-1 py-2 rounded-pill bg-primary hover:bg-secondary text-white text-xs font-semibold shadow-red transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="flex-1 py-3.5 rounded-pill bg-primary hover:bg-secondary text-white text-sm font-semibold shadow-red transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {submitting ? 'Đang gửi...' : t('confirmBooking')}
                   </button>
@@ -721,4 +721,3 @@ const Services = () => {
 }
 
 export default Services
-
