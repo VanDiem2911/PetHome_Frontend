@@ -5,6 +5,8 @@ import { submitContact } from '../utils/api'
 
 const ContactUs = () => {
   const { t } = useLanguage()
+  const storeAddress = '232 Nguyễn Thị Minh Khai, TP. Hồ Chí Minh'
+  const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(storeAddress)}&output=embed`
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'Tư vấn', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -36,8 +38,8 @@ const ContactUs = () => {
     {
       id: 'location',
       title: t('locationTitle'),
-      value: '123 Fake Street',
-      subvalue: 'California, USA',
+      value: '232 Nguyễn Thị Minh Khai',
+      subvalue: 'TP. Hồ Chí Minh',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
@@ -115,15 +117,24 @@ const ContactUs = () => {
             </div>
           ))}
           
-          {/* Decorative Map Placeholder */}
-          <div className="sm:col-span-2 h-48 rounded-card border border-border-light overflow-hidden bg-[#e8eef5] relative flex items-center justify-center group shadow-sm">
-            {/* Styled aesthetic grid representing map */}
-            <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-            <div className="absolute w-8 h-8 bg-primary rounded-full animate-ping opacity-25 z-0" />
-            <div className="relative z-10 w-4 h-4 bg-primary rounded-full border-2 border-white shadow-md flex items-center justify-center" />
-            <span className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-[#111111] text-white text-[9px] font-bold px-2 py-0.5 rounded-pill shadow-sm">
-              {t('mapPlaceholder')}
-            </span>
+          {/* Live Google Maps location */}
+          <div className="sm:col-span-2 h-60 rounded-card border border-border-light overflow-hidden bg-[#e8eef5] relative shadow-sm">
+            <iframe
+              title={`Bản đồ ${storeAddress}`}
+              src={mapUrl}
+              className="absolute inset-0 w-full h-full border-0"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(storeAddress)}`}
+              target="_blank"
+              rel="noreferrer"
+              className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-[#111111] hover:bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-pill shadow-md transition-colors whitespace-nowrap"
+            >
+              232 Nguyễn Thị Minh Khai
+            </a>
           </div>
         </div>
 
