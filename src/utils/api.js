@@ -1,5 +1,9 @@
 // API Utility — Pet's Home
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'
+const configuredApiUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api')
+  .replace(/\/+$/, '')
+const API_BASE_URL = configuredApiUrl.endsWith('/api')
+  ? configuredApiUrl
+  : `${configuredApiUrl}/api`
 
 // ── Newsletter API ──
 export const subscribeNewsletter = async (email) => {

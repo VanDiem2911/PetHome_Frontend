@@ -1,7 +1,12 @@
 // AdminAuthContext — Pet's Home Admin
 import { createContext, useContext, useState, useCallback } from 'react'
 
-const API = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'}/admin`
+const configuredApiUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api')
+  .replace(/\/+$/, '')
+const API_BASE_URL = configuredApiUrl.endsWith('/api')
+  ? configuredApiUrl
+  : `${configuredApiUrl}/api`
+const API = `${API_BASE_URL}/admin`
 
 const AdminAuthContext = createContext(null)
 
