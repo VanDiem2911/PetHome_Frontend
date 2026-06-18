@@ -1,0 +1,2587 @@
+[
+  {
+    "id": 1,
+    "name": "Hạt Natural Core M50 [2kg-500g] thức ăn cho chó mọi lứa tuổi vị thịt gà và cá hồi Hàn Quốc",
+    "brand": "Pet's Home",
+    "price": 62400,
+    "oldPrice": 65000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 165,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-natural-core-m50-cho-cho-thit-ga-va-ca-hoi__9__9a604aff803a40dcacefccae864a6eb5_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "featured",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 2,
+    "name": "Ức gà viên sấy lạnh theo công thức Nhật Bản giữ nguyên mùi thơm và vị ngon cho chó mèo",
+    "brand": "Pet's Home",
+    "price": 72000,
+    "oldPrice": 80000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 21,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_b399b3e10af7413d8d49d6c58fc0e9a8_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 3,
+    "name": "Hạt Zenith [1,2kg] thức ăn hạt mềm cho chó con, chó trưởng thành Hàn Quốc",
+    "brand": "Zenith",
+    "price": 62400,
+    "oldPrice": 65000,
+    "discount": 4,
+    "hot": false,
+    "rating": 4,
+    "reviews": 192,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/thuc-an-hat-mem-cho-cho-zenith__9__2895b1bdb43b4207a84fb9bab3284ae1_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "featured",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 4,
+    "name": "Pate Monge Fresh & Fruit thức ăn mềm ướt cho chó vị thịt, cá, bổ sung trái cây Ý khay 100g",
+    "brand": "Pet's Home",
+    "price": 24300,
+    "oldPrice": 27000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 162,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-monge-cho-cho-khay-100g__14__feb30a658d724bde9a56c4bfacafb09e_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 5,
+    "name": "Bánh thưởng Jerhigh snack thanh que mềm nhiều hương vị cho chó Thái Lan 70g",
+    "brand": "Bánh",
+    "price": 36000,
+    "oldPrice": 40000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 152,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/banh-thuong-jerhigh-cho-cho-70g__2__977ca99e86cd44c8a9c61aaeabde19cf_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 6,
+    "name": "Thức ăn hạt Zoi Dog cho chó 1kg",
+    "brand": "Pet's Home",
+    "price": 40320,
+    "oldPrice": 42000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 103,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_b6085ab96fe941319f51d6c376095b04_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 7,
+    "name": "Hạt Ganador Premium 400g thức ăn cho chó CON, chó LỚN Pháp",
+    "brand": "Pet's Home",
+    "price": 24960,
+    "oldPrice": 26000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 95,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-ganador-puppy---thuc-an-hat-cho-cho-con-vi-trung-va-sua__2__46c132a835e9480e84afb98ba6db2a32_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "featured",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 8,
+    "name": "Pate Jerhigh thức ăn uớt dạng thịt sốt bổ sung Vitamin E, Kẽm, Biotin giúp nuôi dưỡng da lông cho chó Thái Lan gói 120g",
+    "brand": "Pet's Home",
+    "price": 22500,
+    "oldPrice": 25000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 141,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_f3396f2d38e44e488609e54b147a7984_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 9,
+    "name": "Bánh thưởng Milky Bone Goodies xương sữa bổ sung Canxi cho chó Thái Lan",
+    "brand": "Bánh",
+    "price": 108000,
+    "oldPrice": 120000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 172,
+    "emoji": "🦴",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pet2go-milky-bone-with-goat-milk-2__1__4b35190e323446e1b7d621f6f568ffd5_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 10,
+    "name": "Pate Royal Canin Poodle thức ăn ướt cho giống chó Poodle trên 10 tháng tuổi Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 45000,
+    "oldPrice": 50000,
+    "discount": 10,
+    "hot": true,
+    "rating": 4,
+    "reviews": 40,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-cho-cho-poodle-85g__1__6814e89b04284924b57d0e8278750db4_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 11,
+    "name": "Que gặm sạch răng Munchy Fonti C28",
+    "brand": "Que",
+    "price": 22500,
+    "oldPrice": 25000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 140,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/que-gam-sach-rang-munchy-fonti-c28__1__f3582dc75d4547e5a34b1f5d1cf574ba_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 12,
+    "name": "Pate sốt kem cho chó Doggyman bổ sung dinh dưỡng và giúp cân bằng hệ tiêu hoá 70g",
+    "brand": "Pet's Home",
+    "price": 11700,
+    "oldPrice": 13000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 101,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_7f2dbf0580964b72acbab5e0960cbe85_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 13,
+    "name": "Bánh thưởng Doggyman loại Que gặm các vị giúp sạch răng cho chó Nhật Bản túi 60g 120g",
+    "brand": "Bánh",
+    "price": 45000,
+    "oldPrice": 50000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 24,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/banh-thuong-cho-cho-doggyman-loai-que-gam-cac-vi__1__9407c0db7d7e4beab6e1792d5655c358_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 14,
+    "name": "Sữa Royal Canin BabyDog Milk sữa bột thay thế sữa mẹ cung cấp DHA tốt cho trí não cho chó sơ sinh Mỹ hộp 2kg",
+    "brand": "Royal Canin",
+    "price": 436500,
+    "oldPrice": 485000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 189,
+    "emoji": "🥛",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/sua-cho-cho-con-royal-canin-babydog-milk__1__1fa754bda1ca43b09ed5a89206739a6b_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 15,
+    "name": "Xương gặm sạch răng Denta Stix cho chó",
+    "brand": "Xương",
+    "price": 35100,
+    "oldPrice": 39000,
+    "discount": 10,
+    "hot": true,
+    "rating": 5,
+    "reviews": 34,
+    "emoji": "🦴",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/khung_anh_spm_-_dog_ef83dd8f9c8f4622ad39775498f3fefa_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "featured",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 16,
+    "name": "Pate Royal Canin Recovery thức ăn mềm ướt giúp phục hồi và kích thích sự thèm ăn cho chó mèo Pháp lon 195g",
+    "brand": "Royal Canin",
+    "price": 79200,
+    "oldPrice": 88000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 187,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-recovery-giup-phuc-hoi-cho-cho-meo-royal-canin-195g-_lon___1__7cd88aa9812842ba9ce3186ba8366826_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 17,
+    "name": "Pate Hug thức ăn mềm ướt giúp ổn định hệ tiêu hoá, cải thiện hệ tim mạch cho chó Thái Lan gói 120g",
+    "brand": "Pet's Home",
+    "price": 16200,
+    "oldPrice": 18000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 23,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-hug-cho-cho-goi-120g__1__088f891dc183476b8374e924a3f6460e_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 18,
+    "name": "Sữa Predogen sữa bột cung cấp Canxi, Vitamin và các khoáng cho chó Việt Nam hộp 110g",
+    "brand": "Sữa",
+    "price": 40500,
+    "oldPrice": 45000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 187,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/sua-bot-cho-cho-predogen-110g__1__d6d524261dc24e8c993dc67f5c8b462f_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 19,
+    "name": "Que gặm sạch răng Jerhigh Den T Stick 70g",
+    "brand": "Que",
+    "price": 37800,
+    "oldPrice": 42000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 68,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/banh-thuong-jerhigh-cho-cho-70g__2__c2ccbd3ca86e4f919ab31321ee5c149d_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 20,
+    "name": "Pate King's Pet thức ăn ướt mềm giúp sáng mắt, ngăn ngừa sỏi thận cho chó mèo Việt Nam lon 380g",
+    "brand": "Pet's Home",
+    "price": 40500,
+    "oldPrice": 45000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 163,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-king_s-pet-lon-380gr__1__c4c40aa20c1f42ed9366ae8c61efe228_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 21,
+    "name": "Sợi gà sấy dẻo Doggyman 80g",
+    "brand": "Sợi",
+    "price": 58500,
+    "oldPrice": 65000,
+    "discount": 10,
+    "hot": true,
+    "rating": 5,
+    "reviews": 57,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/banh-thuong-cho-cho-doggyman-80g-cac-vi-ga__1__f0dd918adb9e49bea7ad0a2de01cf970_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 22,
+    "name": "Xương gặm sạch răng cho chó Altimate Pet Dental Chews",
+    "brand": "Xương",
+    "price": 76500,
+    "oldPrice": 85000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 85,
+    "emoji": "🦴",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/xuong-gam-sach-rang-cho-cho-altimate-pet-dental-chews__1__f659be030fc74749995ae3c36ae2e57d_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 23,
+    "name": "Bánh thưởng Doggyman snack dạng que mềm vị sữa dê thơm ngon cho chó Nhật Bản các loại",
+    "brand": "Bánh",
+    "price": 25200,
+    "oldPrice": 28000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 187,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/que-gam-sua-de-doggyman-cho-cho-tui-60g__1__9a2479a89f514db89fe90aa2cc84dd51_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 24,
+    "name": "Hạt Royal Canin Poodle [500g, 1,5kg] Thức ăn hạt cho chó Poodle Pháp",
+    "brand": "Royal Canin",
+    "price": 202560,
+    "oldPrice": 211000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 147,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/rc_poodle_cho_con_ph_b2b1ea4155d445ad8e456126e50a5bdb_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 25,
+    "name": "Đồ chơi kéo dãn Doggyman",
+    "brand": "Pet's Home",
+    "price": 74800,
+    "oldPrice": 85000,
+    "discount": 12,
+    "hot": false,
+    "rating": 4,
+    "reviews": 161,
+    "emoji": "🦴",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/43_8cfac38aa0064538af1413157bd9908b_large.png",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 26,
+    "name": "Hạt Zenith [3kg] thức ăn hạt mềm cho chó con, chó trưởng thành Hàn Quốc",
+    "brand": "Zenith",
+    "price": 547200,
+    "oldPrice": 570000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 45,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/thuc-an-hat-mem-cho-cho-zenith__9__54ec097a51db4ddc91eac6ce27f91a4e_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 27,
+    "name": "Hạt Ganador [3kg] thức ăn cho chó CON, chó LỚN Pháp",
+    "brand": "Pet's Home",
+    "price": 187200,
+    "oldPrice": 195000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 154,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-ganador-puppy---thuc-an-hat-cho-cho-con-vi-trung-va-sua__2__50e75025ce3a46a89ee12dc232e69655_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 28,
+    "name": "Bánh thưởng Natural Core snack thịt gà, thịt vịt sấy, snack mềm cho chó Hàn Quốc 40g",
+    "brand": "Bánh",
+    "price": 34200,
+    "oldPrice": 38000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 39,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/thit-uc-say-cho-cho-natural-core-40g__1__3121913a1507401fb59422575b9d2eb0_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 29,
+    "name": "Xương gặm Fonti xương da bò vị sữa thơm ngon, sạch răng cho chó nội địa",
+    "brand": "Xương",
+    "price": 37800,
+    "oldPrice": 42000,
+    "discount": 10,
+    "hot": true,
+    "rating": 5,
+    "reviews": 101,
+    "emoji": "🦴",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/xuong-no-da-bo-sua-6-fonti-cho-cho-c22__1__c6a0619c106e4b82ac99cecdab680ff8_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 30,
+    "name": "Pate Royal Canin Mini Adult thức ăn mềm ướt cho chó lớn giống nhỏ Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 36900,
+    "oldPrice": 41000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 155,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-cho-royal-canin-mini-adult-cho-cho-truong-thanh-cho-nho-85g__1__a63c7ad05fd343229b344ec89907d710_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 31,
+    "name": "Hạt Royal Canin Mini [2kg - 800g] thức ăn cho giống chó nhỏ Pháp Mini Starter, Puppy, Adult",
+    "brand": "Royal Canin",
+    "price": 248640,
+    "oldPrice": 259000,
+    "discount": 4,
+    "hot": true,
+    "rating": 5,
+    "reviews": 119,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-royal-canin-mini-puppy-adult-cho-truong-thanh-cac-dong-cho-nho__6__565009035e844b95905a71ef8101962d_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 32,
+    "name": "Pate Monge VetSolution Renal and Oxalate - thức ăn cho chó bị bệnh Thận và sỏi Ý khay 150g",
+    "brand": "Pet's Home",
+    "price": 28800,
+    "oldPrice": 32000,
+    "discount": 10,
+    "hot": true,
+    "rating": 4,
+    "reviews": 181,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-monge-vetsolution-cho-cho-150g__1__fcde4b022c2d40ddb864faedebe5c2a9_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 33,
+    "name": "Hạt Nutrience Subzero [2,27kg - 500g] thức ăn cho chó cá hồi thịt gà rau củ Cao cấp Canada",
+    "brand": "Nutrience",
+    "price": 652800,
+    "oldPrice": 680000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 188,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_6dea5ce1e21a4f0faa93f8fdde509b15_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 34,
+    "name": "Hạt Natural Core M50 [5-10kg] thức ăn cho chó mọi lứa tuổi vị thịt gà và cá hồi Hàn Quốc",
+    "brand": "Pet's Home",
+    "price": 643200,
+    "oldPrice": 670000,
+    "discount": 4,
+    "hot": true,
+    "rating": 4,
+    "reviews": 188,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-natural-core-m50-cho-cho-thit-ga-va-ca-hoi__9__30db14eb23f04e1f8517b1939382a3aa_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 35,
+    "name": "Pate Royal Canin Mini Puppy thức ăn mềm ướt bổ sung dinh dưỡng cho chó con giống nhỏ Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 40500,
+    "oldPrice": 45000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 191,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-mini-puppy-mini-adult-cho-giong-cho-nho-85g__1__1ba40d913e644669984bd9c27672f172_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "bestSeller",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 36,
+    "name": "Thức ăn hạt dành cho chó Mr. Vet D1 - dòng hạt Holistic Mix topping dành cho chó 1,4kg",
+    "brand": "Pet's Home",
+    "price": 144000,
+    "oldPrice": 150000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 175,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_e4da0edf0ca04e93be7ed1e3b1faf80e_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 37,
+    "name": "Xương cao su siêu bền Doggyman",
+    "brand": "Xương",
+    "price": 44000,
+    "oldPrice": 50000,
+    "discount": 12,
+    "hot": true,
+    "rating": 4,
+    "reviews": 165,
+    "emoji": "🦴",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_9a8e08c5e9b74158a95c2ee5914aa224_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 38,
+    "name": "Pate Royal Canin Mini Mother & Babydog Mousse thức ăn mềm ướt cho chó mẹ và con giống nhỏ Pháp lon 195g",
+    "brand": "Royal Canin",
+    "price": 78300,
+    "oldPrice": 87000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 107,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-cho-cho-royal-canin-mini-mother-_-babydog-mousse-195g__1__1d1dd4163d9c46e3805d258951320217_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 39,
+    "name": "Bóng mềm đặc ruột Doggyman đồ chơi dạng banh, bóng mềm, bền để gặm, huấn luyện cho chó",
+    "brand": "Bóng",
+    "price": 57200,
+    "oldPrice": 65000,
+    "discount": 12,
+    "hot": false,
+    "rating": 5,
+    "reviews": 32,
+    "emoji": "🦴",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_87f80bacd9df445fa941dea5698caa5f_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 40,
+    "name": "Hạt Royal Canin Medium [1kg - 4kg] thức ăn cho chó cỡ vừa chó con, chó trưởng thành Pháp",
+    "brand": "Royal Canin",
+    "price": 242880,
+    "oldPrice": 253000,
+    "discount": 4,
+    "hot": true,
+    "rating": 5,
+    "reviews": 142,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-royal-canin-medium-puppy-adult__10__1ddd94155b984d5f94413ec377558f30_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 41,
+    "name": "Pate Meowow thức ăn ướt mềm vị cá ngừ trắng giàu omega 3 giúp mượt lông cho mèo Hàn Quốc lon 80g",
+    "brand": "Pet's Home",
+    "price": 22500,
+    "oldPrice": 25000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 88,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-meowow-cho-meo-lon-80g__1__99d445f081d243c4826a5b23a2904cee_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 42,
+    "name": "Súp thưởng - Sốt dinh dưỡng cho mèo mọi lứa tuôi 15g",
+    "brand": "Súp",
+    "price": 5400,
+    "oldPrice": 6000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 140,
+    "emoji": "🐱",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_c5d38238aa94467683b8e1946dbdf9c2_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 43,
+    "name": "Hạt Silver Spoon [1kg] Thức ăn hạt cho mèo Nhật Bản vị cá ngừ, thịt gà, giảm nôn trớ",
+    "brand": "Pet's Home",
+    "price": 163200,
+    "oldPrice": 170000,
+    "discount": 4,
+    "hot": false,
+    "rating": 4,
+    "reviews": 165,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_1637a3a6c5fd462f839fc1c9cd8591b1_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 44,
+    "name": "Pate sữa dê cho mèo Pet Q, thức ăn cho mèo mọi lứa tuổi 70g",
+    "brand": "Pet's Home",
+    "price": 16200,
+    "oldPrice": 18000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 132,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_b6a600b5b7f84acc83f1b98129b0f244_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 45,
+    "name": "Hạt Natural Core C3 [1,5kg - 500g] thức ăn cho mèo thịt gà và cá hồi Bene 3012 Hàn Quốc",
+    "brand": "Pet's Home",
+    "price": 72000,
+    "oldPrice": 75000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 174,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-natural-core-c3-bene-3012-cho-meo-thit-ga-va-ca-hoi__1__2a335f3c114b4bceb8aceea1390cf683_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 46,
+    "name": "Bánh thưởng cho mèo Catnip Biscuits 40g",
+    "brand": "Bánh",
+    "price": 18000,
+    "oldPrice": 20000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 122,
+    "emoji": "🐱",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_703ade64f50a4469bf09f25f35ee8b5c_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 47,
+    "name": "Pate Nekko Jelly dạng thạch giàu Protein, vitamin E và Omega 3 cho mèo Thái Lan gói 70g",
+    "brand": "Nekko",
+    "price": 17100,
+    "oldPrice": 19000,
+    "discount": 10,
+    "hot": true,
+    "rating": 5,
+    "reviews": 154,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_0a97ab5eb970407aadff1701ff61bc0d_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 48,
+    "name": "Pate Nekko Gravy thức ăn ướt dạng sốt giúp bổ sung các chất dinh dưỡng cần thiết và hỗ trợ tiêu hoá cho mèo Thái Lan gói 70g",
+    "brand": "Nekko",
+    "price": 17100,
+    "oldPrice": 19000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 67,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_76b0391b47ed4655a5d1b083ebe88345_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 49,
+    "name": "Pate Regalos Tuna in Jelly thức ăn ướt dạng thạch bổ sung Taurine, Omega 3 cho mèo Thái Lan gói 70g",
+    "brand": "Pet's Home",
+    "price": 16200,
+    "oldPrice": 18000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 144,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-regalos-cho-meo-goi-70g__1__3d7ad5a505fe40548903f7becdf65915_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 50,
+    "name": "Pate Whiskas thức ăn ướt mềm hỗ trợ tiêu hoá, kích thích vị giác cho mèo con Thái Lan gói 85g",
+    "brand": "Whiskas",
+    "price": 11700,
+    "oldPrice": 13000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 113,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-whiskas-meo-con-85g-w1g__1__fe0b8d58a1df473b8fc8b0db91674f31_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 51,
+    "name": "Pate Nekko Kitten dạng Mousse bổ sung Vitamin cho mèo con Thái Lan gói 70g",
+    "brand": "Nekko",
+    "price": 17100,
+    "oldPrice": 19000,
+    "discount": 10,
+    "hot": true,
+    "rating": 5,
+    "reviews": 102,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_c793b91ebb62449f8eda1286207ba238_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 52,
+    "name": "Hạt Royal Canin Indoor [2kg - 1kg - 400g] thức ăn cho mèo trong nhà giảm mùi hôi Pháp",
+    "brand": "Royal Canin",
+    "price": 137280,
+    "oldPrice": 143000,
+    "discount": 4,
+    "hot": false,
+    "rating": 4,
+    "reviews": 59,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-meo-royal-canin-indoor__1__00f303a2a67348efaea0e00686998e26_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 53,
+    "name": "Hạt Catsrang [5kg - 1kg] thức ăn cho mèo mọi độ tuổi thơm ngon Hàn Quốc",
+    "brand": "Catsrang",
+    "price": 100800,
+    "oldPrice": 105000,
+    "discount": 4,
+    "hot": true,
+    "rating": 5,
+    "reviews": 134,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_8b76b518d0b8446293892782ac16f8a7_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 54,
+    "name": "Pate Snappy Tom thức ăn ướt mềm cá ngừ mix trái cây bổ sung chất dinh dưỡng cho mèo Thái Lan gói 70g",
+    "brand": "Pet's Home",
+    "price": 16200,
+    "oldPrice": 18000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 81,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-cao-cap-snappy-tom-gourmers-cho-meo-70g__2__2021869233f14d4b929cd66f5b115bf3_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 55,
+    "name": "Pate Whiskas thức ăn ướt mềm  hỗ trợ tiêu hoá, kích thích vị giác cho mèo Thái Lan gói 85g",
+    "brand": "Whiskas",
+    "price": 11700,
+    "oldPrice": 13000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 140,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-whiskas-cho-meo-goi-85g-w1g__1__5eac9732cbf042ab8fe694fe46564367_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 56,
+    "name": "Hạt Zenith [1,2kg] thức ăn hạt mềm cho mèo Hàn quốc",
+    "brand": "Zenith",
+    "price": 240000,
+    "oldPrice": 250000,
+    "discount": 4,
+    "hot": true,
+    "rating": 5,
+    "reviews": 169,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/zenith_meo_ph_8348efa1a03d4a02b33baa5288a3cc32_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 57,
+    "name": "Pate Snappy Tom Grain Free thức ăn mềm ướt bổ sung Omega 3, Vitamin cho mèo Thái Lan gói 85g",
+    "brand": "Pet's Home",
+    "price": 12600,
+    "oldPrice": 14000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 131,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-snappy-tom-grain-free-cho-meo-85g__1__c0cef52a03aa4150a5590c570a520190_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 58,
+    "name": "Hạt MeO [1,2kg] cho mèo con, mèo trưởng thành Thái Lan",
+    "brand": "Pet's Home",
+    "price": 27840,
+    "oldPrice": 29000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 37,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-meo-meo-350g__10__3e004517f81a46a5a88a684f315858f1_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 59,
+    "name": "Súp thưởng Ciao Churu thơm ngon cho mèo kén ăn chính hãng Thái Lan 50 thanh",
+    "brand": "Ciao",
+    "price": 351000,
+    "oldPrice": 390000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 59,
+    "emoji": "🐱",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_f55228b8ec4e42a793cc56a709da9ada_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 60,
+    "name": "Pate Royal Canin Urinary Care thức ăn ướt phòng ngừa sỏi thận cho mèo Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 41400,
+    "oldPrice": 46000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 91,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-urinary-care-ho-tro-tiet-nieu-cho-meo-85g__11__27731bcd17be4182967824491c3bda9b_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 61,
+    "name": "Pate Royal Canin Sterilised thức ăn ướt mềm giúp kiểm soát cân nặng cho mèo đã triệt sản Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 37800,
+    "oldPrice": 42000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 125,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-sterilised-cho-meo-da-triet-san-85g__9__508d93548cea46438e728a359fb05176_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 62,
+    "name": "Hạt Whiskas Thái [1,2kg - 400g] thức ăn cho mèo con, mèo lớn Thái Lan",
+    "brand": "Whiskas",
+    "price": 34560,
+    "oldPrice": 36000,
+    "discount": 4,
+    "hot": false,
+    "rating": 4,
+    "reviews": 47,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_b88d8e767aa641d89a187dc859204986_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 63,
+    "name": "Thức ăn hạt Zoi Cat cho mèo 1kg",
+    "brand": "Pet's Home",
+    "price": 57600,
+    "oldPrice": 60000,
+    "discount": 4,
+    "hot": false,
+    "rating": 4,
+    "reviews": 126,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_fda7061a7f2b4c1c9161a8aa4394a033_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 64,
+    "name": "Đồ chơi cần câu kim loại gắn lông vũ",
+    "brand": "Pet's Home",
+    "price": 35200,
+    "oldPrice": 40000,
+    "discount": 12,
+    "hot": false,
+    "rating": 5,
+    "reviews": 53,
+    "emoji": "🪶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_c560713ec4b44529b52b64be42403994_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 65,
+    "name": "Súp thưởng Wanpy nắp vặn hàng chuẩn nội địa Trung và Châu Âu thơm ngon cho mèo",
+    "brand": "Súp",
+    "price": 16200,
+    "oldPrice": 18000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 165,
+    "emoji": "🐱",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_2624731f66f144518b01c1fdddb77915_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 66,
+    "name": "Pate Royal Canin British Shorthair thức ăn uớt mềm cho giống mèo Anh Lông Ngắn Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 41400,
+    "oldPrice": 46000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 28,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/yal-canin-british-shorthair-chuyen-danh-cho-meo-anh-long-ngan-85g__10__b1d9cfb288474aedacd0fb949df7f257_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 67,
+    "name": "Pate Royal Canin Kitten Instinctive thức ăn ướt mềm tăng cường hệ miễn dịch cho mèo con Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 41400,
+    "oldPrice": 46000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 90,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-cho-meo-con-kitten-instinctive-85g__2__e38ed5230f8b40cbb6a133f3c5a1dfe7_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 68,
+    "name": "Pate King's Pet by Bao Anh thức ăn ướt mềm không chứa chất bảo quản cho mèo nội địa lon 80g",
+    "brand": "Pet's Home",
+    "price": 23400,
+    "oldPrice": 26000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 132,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-lon-king_s-pet-by-bao-anh-80g__1__5faef08969d34f84b7bf63c04085a713_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 69,
+    "name": "Hạt Minino Yum! [1,5kg] thức ăn cho mèo mọi lứa tuổi công nghệ Pháp",
+    "brand": "Minino",
+    "price": 30000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": true,
+    "rating": 4,
+    "reviews": 139,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-minino-yum-cho-meo-350g_4e7d9bba19b945edaaae19b08b9fb77e_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 70,
+    "name": "Pate Snappy Tom Grain Free thức ăn ướt mềm từ thịt, cá thật đầy dinh dưỡng cho mèo Thái Lan lon 400g",
+    "brand": "Pet's Home",
+    "price": 31500,
+    "oldPrice": 35000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 63,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-snappy-tom-grain-free-cho-meo-400g__1__0e349e92897747718fa5b741615b674b_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 71,
+    "name": "Pate Aatas thức ăn ướt mềm vị cá ngừ mix giúp bổ sung Vitamin cho mèo Singapore gói 80g",
+    "brand": "Pet's Home",
+    "price": 20700,
+    "oldPrice": 23000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 100,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-aatas-cho-meo-lon-80g__1__fc1e0f56d2fd422b8f658c226368c6fd_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 72,
+    "name": "Pate INABA Ciao thức ăn ướt dạng soup giàu đạm và Vitamin cho mèo Nhật Bản gói 40g",
+    "brand": "Ciao",
+    "price": 14400,
+    "oldPrice": 16000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 191,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/sup-ciao-cho-meo-goi-40g__5__ff4cea98d6d247c7b1ff0e4e5576dd33_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 73,
+    "name": "Hạt Reflex Plus [1,5kg] thức ăn cho mèo con, mèo trưởng thành vị gà, cá hồi, hairball, urinary, kén ăn",
+    "brand": "Pet's Home",
+    "price": 259200,
+    "oldPrice": 270000,
+    "discount": 4,
+    "hot": false,
+    "rating": 4,
+    "reviews": 72,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_ae9689f67f214c4c9e5539826211c9cf_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 74,
+    "name": "Pate Royal Canin Renal with Fish Feline thức ăn ướt hỗ trợ chức năng thận cho mèo bệnh thận gói 85g",
+    "brand": "Royal Canin",
+    "price": 44100,
+    "oldPrice": 49000,
+    "discount": 10,
+    "hot": true,
+    "rating": 5,
+    "reviews": 184,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-renal-with-fish-feline-85g__2__f7ed6dc749b940238c383c2995d83369_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 75,
+    "name": "Bánh thưởng Kit Cat Fillet Fresh snack dạng thịt cá, gà nguyên miếng dinh dưỡng cho mèo Singapore",
+    "brand": "Bánh",
+    "price": 28800,
+    "oldPrice": 32000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 112,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_3a0668f90715499284fbb57d902eaf61_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 76,
+    "name": "Hạt MeO [7kg] thức ăn cho mèo trưởng thành Thái Lan",
+    "brand": "Pet's Home",
+    "price": 504000,
+    "oldPrice": 525000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 81,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/hat-meo-ca-ngu-cho-meo-350g__1__3215de6a7c81457c80c755966a216138_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 77,
+    "name": "Pate Royal Canin Hairball Care thức ăn ướt mềm ngăn ngừa và loại bỏ búi lông cho mèo Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 41400,
+    "oldPrice": 46000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 159,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-hairball-care-tri-bui-long-cho-meo-85g__2__6517bd1932554984b2b745f6be6e3224_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 78,
+    "name": "Bánh thưởng Natural Core snack thịt gà, cá ngừ, thịt gà phô mai sấy dẻo cho mèo Hàn Quốc túi 40g",
+    "brand": "Bánh",
+    "price": 34200,
+    "oldPrice": 38000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 129,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_16799445138f4fc486981ddb00c00c7c_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 79,
+    "name": "Pate Royal Canin Babycat Instinctive thức ăn ướt siêu mịn cho mèo mẹ và mèo sơ sinh Pháp lon 195g",
+    "brand": "Royal Canin",
+    "price": 81000,
+    "oldPrice": 90000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 133,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/oyal-canin-babycat-instinctive-cho-meo-me-va-meo-con-195g-lon-195g__7__6b1b2e50135f4a128ef748249d6a8bcc_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale",
+      "bestSeller",
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 80,
+    "name": "Pate Kucinta cho mèo gói 80g giàu dinh dưỡng cho mèo trưởng thành",
+    "brand": "Pet's Home",
+    "price": 9900,
+    "oldPrice": 11000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 62,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_d6031034f7e343a19d5fca0fcf21abeb_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 81,
+    "name": "[CHÍNH HÃNG] Viên nhai Bravecto loại bỏ ve rận, bọ chét, viêm da, ghẻ cho chó",
+    "brand": "[CHÍNH",
+    "price": 624000,
+    "oldPrice": 650000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 94,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/thuoc-bravecto-tri-ghe_-viem-da_-ve-ran-cho-cho-tu-10-20kg__1__2629e5ceb27348b1bec497e4cd24efaf_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 82,
+    "name": "Men tiêu hoá Vemedim Probisol men vi sinh hỗ trợ tiêu hoá, chứa vi sinh hữu ích cho chó mèo nội địa",
+    "brand": "Men",
+    "price": 6720,
+    "oldPrice": 7000,
+    "discount": 4,
+    "hot": true,
+    "rating": 5,
+    "reviews": 168,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/men-tieu-hoa-cho-cho-meo-vemedim-probisol-5g__3__2691158fad1a419eb41051ef475700bf_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 83,
+    "name": "Pate Royal Canin Urinary S/O Feline cho mèo gói 85g",
+    "brand": "Royal Canin",
+    "price": 44160,
+    "oldPrice": 46000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 66,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-urinary-so-feline-85g__1__828580a8213742d7a56028338de70dc9_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "deals",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 84,
+    "name": "Xổ giun Drontal Cat cho mèo",
+    "brand": "Pet's Home",
+    "price": 43200,
+    "oldPrice": 45000,
+    "discount": 4,
+    "hot": false,
+    "rating": 4,
+    "reviews": 187,
+    "emoji": "🐱",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/xo-giun-drontal-cat-cho-meo-vien__1__90743fc9225b42d995c0f128575dfc53_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 85,
+    "name": "Xổ giun cho chó Drontal Plus",
+    "brand": "Pet's Home",
+    "price": 38400,
+    "oldPrice": 40000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 47,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/vien-xo-giun-cho-cho-drontal-tasty-bone__1__187aec30d71c4ed189ab7f09fb6b329e_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 86,
+    "name": "Nhỏ gáy Fronil Spot ngăn ngừa, giảm ve, rận, bọ chét, bọ nhảy cho chó nội địa (có bán tuýp lẻ)",
+    "brand": "Nhỏ",
+    "price": 14400,
+    "oldPrice": 15000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 139,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/thuoc-nho-tri-ve-fronil-spot__1__ea83c6160f9240f391ae1c4cb989c07b_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 87,
+    "name": "Pate Royal Canin Sensory Feline thức ăn ướt mềm kích thích ăn uống cho mèo biếng ăn Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 41400,
+    "oldPrice": 46000,
+    "discount": 10,
+    "hot": true,
+    "rating": 5,
+    "reviews": 20,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-sensory-kich-thich-giac-quan-an-uong-cho-meo-85g__1__9c4e5f4495fa4f0994eb2518186f65d9_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "deals",
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 88,
+    "name": "Pate Royal Canin Intense Beauty Jelly thức ăn ướt mềm giúp dưỡng da và lông cho mèo Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 41400,
+    "oldPrice": 46000,
+    "discount": 10,
+    "hot": true,
+    "rating": 5,
+    "reviews": 169,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-intense-beauty-duong-da-long-cho-meo-85g__9__b137616f0be34b088ae23c20e1bb450e_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "deals",
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 89,
+    "name": "Pate Royal Canin Instinctive thức ăn ướt tăng sức đề kháng cho mèo trưởng thành Pháp gói 85g",
+    "brand": "Royal Canin",
+    "price": 37800,
+    "oldPrice": 42000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 106,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-royal-canin-instinctive-85g-cho-meo-truong-thanh__2__1e65b4045f274eae8ec134b050832d30_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "deals",
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 90,
+    "name": "Chai xịt Vime Frondog chai xịt ngăn ngừa, loại bỏ ve rận, bọ chét trên chó mèo, chó mèo mang thai",
+    "brand": "Chai",
+    "price": 110400,
+    "oldPrice": 115000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 90,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/vime---frondog-tri-ve_-bo-chet-o-cho-meo__1__879d35b79ffc45e28999c6c09c8ce529_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 91,
+    "name": "Viên nhai NexGard phòng và trị ve cho chó",
+    "brand": "Viên",
+    "price": 129600,
+    "oldPrice": 135000,
+    "discount": 4,
+    "hot": false,
+    "rating": 4,
+    "reviews": 172,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/nexgard----phong-va-tri-ve-tren-cho__1__7181b78eba8249af86c07f98bed9a098_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 92,
+    "name": "Simparica trị ngoại ký sinh trùng cho chó",
+    "brand": "Simparica",
+    "price": 105600,
+    "oldPrice": 110000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 56,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/simparica-tri-ngoai-ky-sinh-trung-cho-cho__1__b8c31310695f4a30b6093bf57ee71e07_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 93,
+    "name": "Bánh thưởng Regalos Cat Snack Tuna snack dạng cá, gà tươi nguyên miếng thơm ngon cho mèo Thái Lan",
+    "brand": "Bánh",
+    "price": 16200,
+    "oldPrice": 18000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 121,
+    "emoji": "🐟",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_8453ebf5a38043809189902ddae4a44d_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "deals",
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 94,
+    "name": "Pate Maria thức ăn mềm ướt giúp hỗ trợ hệ tiêu hoá và nuôi dưỡng da lông cho chó Thái Lan gói 70g",
+    "brand": "Pet's Home",
+    "price": 22500,
+    "oldPrice": 25000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 173,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/pate-maria-cho-cho-goi-70g__1__13eed9e30eac48839f91ac55825baf7c_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals",
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 95,
+    "name": "Gel dinh dưỡng Nuvita Gel thực phẩm bổ sung vitamin, khoáng chất cần thiết cho chó mèo nội địa",
+    "brand": "Gel",
+    "price": 72000,
+    "oldPrice": 75000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 197,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/nuvita-gel-cung-cap-vitamin_-khoang-cho-cho-meo-120g__1__ebd50ad60c9b4aea9e3573c2062d488e_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 96,
+    "name": "Kem bôi Anti Derm đặc trị viêm da, ghẻ, xà mâu cho chó, mèo 50g",
+    "brand": "Kem",
+    "price": 57600,
+    "oldPrice": 60000,
+    "discount": 4,
+    "hot": false,
+    "rating": 5,
+    "reviews": 153,
+    "emoji": "🐶",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/kem-boi-da-anti-derm-cho-cho-meo-tri-viem-da_-ghe_-xa-mau-40g__1__b51f60755e20460ba07ce4c6fb2e5fcc_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 97,
+    "name": "Sữa Kitten Grow sữa bột giàu dinh dưỡng cho mèo con nội địa hộp 100g",
+    "brand": "Sữa",
+    "price": 90000,
+    "oldPrice": 100000,
+    "discount": 10,
+    "hot": false,
+    "rating": 5,
+    "reviews": 154,
+    "emoji": "🥛",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/sua-kitten-grow-danh-cho-meo-con-100g__1__3dd357cdcb4549209a69815435e1e68f_large.jpg",
+    "category": "Mèo",
+    "sections": [
+      "deals",
+      "flashSale",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 98,
+    "name": "Sữa Pet Grow sữa bột dinh dưỡng chứa các Axit Amin thiết yếu cho chó con nội địa lon 200g",
+    "brand": "Sữa",
+    "price": 157500,
+    "oldPrice": 175000,
+    "discount": 10,
+    "hot": false,
+    "rating": 4,
+    "reviews": 179,
+    "emoji": "🍖",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/sua-pet-grow-danh-cho-cho-con-200g__1__7e127406e1924724823615da0d8c419c_large.jpg",
+    "category": "Chó",
+    "sections": [
+      "deals",
+      "flashSale"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 99,
+    "name": "Thuốc nhỏ tai Vemedim 10ml",
+    "brand": "Thuốc",
+    "price": 38400,
+    "oldPrice": 40000,
+    "discount": 4,
+    "hot": false,
+    "rating": 4,
+    "reviews": 76,
+    "emoji": "🎁",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/thuoc-nho-tai-vemedim-10ml__1__adb32ca0cfce41d2a98f7cbe446dbe3f_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "deals",
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 100,
+    "name": "Bộ áo Cosplay nhiều nhân vật",
+    "brand": "Pet's Home",
+    "price": 120000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": true,
+    "rating": 5,
+    "reviews": 20,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_a82db115ca7a4c0393892e7f91916e1f_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 101,
+    "name": "Vòng cổ họa tiết cho chó mèo",
+    "brand": "Vòng",
+    "price": 15000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": true,
+    "rating": 5,
+    "reviews": 37,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_3928bb07c5474720bd8c75746efff7d5_large.png",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 102,
+    "name": "Bộ dây dẫn yếm hoạ tiết 2 lớp 15mm",
+    "brand": "Pet's Home",
+    "price": 40000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": true,
+    "rating": 5,
+    "reviews": 54,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_04f4d7d3672146609199fe6cacfc2077_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 103,
+    "name": "Set yếm đeo ngực có nơ to trên lưng",
+    "brand": "Set",
+    "price": 90000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": true,
+    "rating": 5,
+    "reviews": 71,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_90cc3a17e2a848269c477237aec2f9cc_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 104,
+    "name": "Bộ dây dẫn vòng cổ hoạ tiết 2 lớp 10mm",
+    "brand": "Pet's Home",
+    "price": 35000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 88,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/6a89d3b464954d1ab7dd761f3bc27281_ab646fc319aa4e898a516a25b2c639e4_large.png",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 105,
+    "name": "Set vòng cổ nơ kèm yếm giáng sinh",
+    "brand": "Set",
+    "price": 50000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 105,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_e48642a963c3457c96f75e32a4e29593_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 106,
+    "name": "Áo khoác nón Noel 2023",
+    "brand": "Pet's Home",
+    "price": 90000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 122,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_f002ed6212e0453a87a5d743d61c7d7e_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 107,
+    "name": "Sơ mi hè cây dừa",
+    "brand": "Pet's Home",
+    "price": 60000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 139,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_591d27b725db49c2992c27152469db44_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 108,
+    "name": "Áo mùa hè hoa cúc",
+    "brand": "Pet's Home",
+    "price": 60000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 156,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_cf850dfc7e4340459733546ffce32fcd_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 109,
+    "name": "Vòng cổ mèo Nhật Bản các size",
+    "brand": "Vòng",
+    "price": 45000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 173,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_ba9373da3b9349e0a9ab5bba14de6b4f_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 110,
+    "name": "Bộ dây dẫn vòng cổ hoạ tiết 2 lớp 15mm",
+    "brand": "Pet's Home",
+    "price": 50000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 30,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_a082bf1c10ce43d68fd8938127f69fd6_large.png",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 111,
+    "name": "Bộ áo quần bốn chân thỏ trắng/rồng cầu vồng",
+    "brand": "Pet's Home",
+    "price": 70000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 47,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_5a89a59bc1344911bb17c5d12918bcc5_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller",
+      "featured"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 112,
+    "name": "LHK - Áo nón MEOW",
+    "brand": "LHK",
+    "price": 43000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 64,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_7726b19fa1f64be6b8e87ae64ea35cc8_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 113,
+    "name": "BH - Vòng chống liếm Elizabeth BoBo 0",
+    "brand": "Pet's Home",
+    "price": 80000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 81,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_d1c94bdec8be4fc281ab7707bc2c595e_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 114,
+    "name": "Túi xách trong suốt cho chó mèo",
+    "brand": "Túi",
+    "price": 350000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 98,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_06b522a6d77d4158903feded33c95a94_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 115,
+    "name": "Vòng chống liếm đệm bông",
+    "brand": "Vòng",
+    "price": 60000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 115,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_7f01f941d2804a868bb0774086b761a5_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 116,
+    "name": "Balo phi hành gia mẫu cơ bản",
+    "brand": "Balo",
+    "price": 250000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 132,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_9487e52776ff49868f78e57f9db8fbf4_large.png",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 117,
+    "name": "Bộ áo quần bốn chân gấu hồng/gà xanh",
+    "brand": "Pet's Home",
+    "price": 70000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 149,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_bfacd88abe644bc7b5d002f9f49f89bd_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 118,
+    "name": "Set đeo ngực kiểu áo vest Hàn Quốc",
+    "brand": "Set",
+    "price": 90000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 166,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_fc09e66a055647aaa2f794028fe24ee1_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 119,
+    "name": "Túi xách phi hành gia trơn",
+    "brand": "Túi",
+    "price": 210000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 23,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/3e993fbd5d374a1a9bb0c435119dc9f6_3f15cc7c05da4dbb8fbc711aca02b8a7_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 120,
+    "name": "Dây dẫn kim loại Bobo BO-1733 2 x 120cm",
+    "brand": "Dây",
+    "price": 50000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 40,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_c52d44a53ef846628e17b0faa8da1db7_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 121,
+    "name": "Bộ dây dẫn vòng cổ nylon chống thấm Zichen",
+    "brand": "Pet's Home",
+    "price": 100000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 57,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_f79a3c9c3e7646478491b22cb90a4910_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 122,
+    "name": "Áo dài chữ Phúc đỏ",
+    "brand": "Pet's Home",
+    "price": 150000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 74,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_f50d1dc4c1514d9f9b7422405309e69f_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 123,
+    "name": "Áo 2 dây summer",
+    "brand": "Pet's Home",
+    "price": 40000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 91,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_2678bd2cd7d749aa8802f2d5efa3ac44_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 124,
+    "name": "Dây dẫn mix Doggyman 15mm",
+    "brand": "Doggyman",
+    "price": 55000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 108,
+    "emoji": "??",
+    "imageUrl": "https://cdn.hstatic.net/shared/noDefaultImage6_large.gif",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 125,
+    "name": "Balo vuông cửa trong suốt",
+    "brand": "Balo",
+    "price": 400000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 125,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_0042830515f0462189c3d69b69393800_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 126,
+    "name": "Túi xách vòm BH size S",
+    "brand": "Túi",
+    "price": 130000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 142,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/edf76c5a9a734ccaaacc481585ccc125_6130051265594e4aa8f8135cc70301c9_large.png",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 127,
+    "name": "Dây dẫn Tough Tough hình hoa M Doggyman",
+    "brand": "Doggyman",
+    "price": 65000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 159,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_f7d2bfbd524647d09308a503e0fa7b76_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 128,
+    "name": "Dây dẫn mix Doggyman 10mm",
+    "brand": "Doggyman",
+    "price": 45000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 176,
+    "emoji": "??",
+    "imageUrl": "https://cdn.hstatic.net/shared/noDefaultImage6_large.gif",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 129,
+    "name": "Balo phi hành gia mẫu trong suốt",
+    "brand": "Balo",
+    "price": 250000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 33,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_de811e3d2eb144439cb9a3353e66d954_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 130,
+    "name": "Balo icon mặt mèo",
+    "brand": "Balo",
+    "price": 300000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 50,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_601ff16843084b61bd6da0a8da0a0d6f_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 131,
+    "name": "Balo trong suốt 2008DZ01",
+    "brand": "Balo",
+    "price": 500000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 67,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/e84ba6269db544d9a21ea7406450970b_74744ae363574b69a0b26927121f98fc_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 132,
+    "name": "Dây dắt hộp DoggyWalker Mini màu cam 5kg",
+    "brand": "Dây",
+    "price": 190000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 84,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_861fd3c18069416ba1018d2d98cb980f_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 133,
+    "name": "Rọ mõm nhựa Bobo",
+    "brand": "Pet's Home",
+    "price": 80000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 101,
+    "emoji": "??",
+    "imageUrl": "https://cdn.hstatic.net/shared/noDefaultImage6_large.gif",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 134,
+    "name": "Túi xách Pet Style mặt thú - S",
+    "brand": "Túi",
+    "price": 175000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 118,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/7e44014db1064c7186f4f88de1804e3a_1b5dbcde3f6744d4822e0d8d4741e7aa_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 135,
+    "name": "Túi xách vòm họa tiết size L",
+    "brand": "Túi",
+    "price": 150000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 135,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/c3f47aff70c044549096ff45562ea66f_c561e55675f5420782211b9a0c632bb4_large.png",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 136,
+    "name": "Set dây dẫn vòng cổ Yabeibi",
+    "brand": "Set",
+    "price": 50000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 152,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_4caba1fb461d4fcfbf0d0c8c7e7bd0c9_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 137,
+    "name": "Bộ dây dẫn yếm nylon chống thấm Zichen",
+    "brand": "Pet's Home",
+    "price": 140000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 169,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1d5cfef97a6b4176833a60df68c5822c_e4249b904a1844db8b623b72d3ce130e_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 138,
+    "name": "Vòng cổ chống liếm hình hoa",
+    "brand": "Vòng",
+    "price": 25000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 26,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/1_f8bce860b0314b55bd6025deb0a90222_large.jpg",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  },
+  {
+    "id": 139,
+    "name": "Dây dẫn hình xương xanh dương 25mm Doggyman",
+    "brand": "Doggyman",
+    "price": 70000,
+    "oldPrice": null,
+    "discount": 0,
+    "hot": false,
+    "rating": 5,
+    "reviews": 43,
+    "emoji": "??",
+    "imageUrl": "https://product.hstatic.net/1000104513/product/day_dan_hinh_xuong_xanh_duong_25mm_doggyman__508fad0aa27744968a691445224e6a53_large.png",
+    "category": "Phụ kiện",
+    "sections": [
+      "bestSeller"
+    ],
+    "stock": 100
+  }
+]

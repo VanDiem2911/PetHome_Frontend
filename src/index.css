@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base resets ── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply font-sans text-xs text-[#333333] bg-white antialiased;
+    font-weight: 400;
+    line-height: 22.652px;
+    letter-spacing: 0.25px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-medium text-[#333333];
+    line-height: 1.4;
+  }
+
+  a  { @apply no-underline text-inherit; }
+  ul { @apply list-none; }
+  img { @apply block max-w-full; }
+  button { @apply font-sans cursor-pointer; }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-bg-light; }
+  ::-webkit-scrollbar-thumb { @apply bg-[#ccc] rounded; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-[#aaa]; }
+}
+
+/* ── Reusable component classes ── */
+@layer components {
+  /* Layout */
+  .container-site {
+    @apply w-full max-w-site mx-auto px-5;
+  }
+
+  /* Section header */
+  .section-title {
+    @apply inline-block relative font-medium text-h3 text-[#333333];
+    letter-spacing: 0.24px;
+    line-height: 40px;
+  }
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-1 left-0 w-10 h-0.5 bg-primary rounded-sm;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 font-sans text-xs font-normal cursor-pointer transition-all duration-280 border-none outline-none whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply btn bg-brown-dark text-white rounded-btn px-[22px] py-[10px] hover:bg-brown-warm hover:shadow-mid2 hover:-translate-y-px;
+  }
+  .btn-accent {
+    @apply btn bg-primary text-white rounded-btn px-[22px] py-[10px] font-medium hover:bg-secondary hover:shadow-red hover:-translate-y-px;
+  }
+  .btn-outline {
+    @apply btn bg-transparent text-primary border border-primary rounded-btn px-[18px] py-2 hover:bg-primary hover:text-white;
+  }
+  .btn-filled {
+    @apply btn bg-brown-dark text-white rounded-pill px-[15px] py-2 border border-[rgb(54,33,22)] hover:bg-brown-warm;
+    border-width: 0.8px;
+  }
+
+  /* ── Product Card ── */
+  .product-card {
+    @apply bg-white border border-border-light rounded-md overflow-hidden cursor-pointer flex flex-col transition-all duration-280;
+  }
+  .product-card:hover {
+    @apply shadow-mid -translate-y-1 border-[#ddd];
+  }
+  .product-card__img-wrap {
+    @apply relative overflow-hidden bg-bg-light;
+    aspect-ratio: 1 / 1;
+  }
+  .product-card__img-wrap img {
+    @apply w-full h-full object-cover transition-transform duration-[400ms];
+  }
+  .product-card:hover .product-card__img-wrap img {
+    @apply scale-105;
+  }
+
+  /* ── Badge ── */
+  .badge { @apply inline-block px-2 py-0.5 rounded-sm text-11 font-medium leading-snug; }
+  .badge-red   { @apply bg-primary text-white; }
+  .badge-green { @apply bg-accent text-white; }
+  .badge-dark  { @apply bg-brown-dark text-white; }
+
+  /* ── Category pill ── */
+  .cat-pill {
+    @apply flex flex-col items-center gap-2 cursor-pointer transition-all duration-280;
+  }
+  .cat-pill__icon {
+    @apply w-16 h-16 rounded-full flex items-center justify-center text-2xl transition-all duration-280 shadow-low;
+  }
+  .cat-pill:hover .cat-pill__icon {
+    @apply shadow-mid2 -translate-y-1;
+  }
+  .cat-pill__label {
+    @apply text-caption text-[#333333] font-medium text-center;
+  }
+
+  /* ── Nav link ── */
+  .nav-link {
+    @apply relative text-xs text-[#333333] font-normal py-2.5 transition-colors duration-180 hover:text-primary;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-280;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after { @apply w-full; }
+  .nav-link.active { @apply text-primary font-medium; }
+}
