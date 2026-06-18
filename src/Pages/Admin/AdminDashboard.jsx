@@ -1,6 +1,15 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAdmin } from '../../context/AdminAuthContext'
+
+const TIME_OPTIONS = [
+  ...Array.from({ length: 96 }, (_, index) => {
+    const hour = String(Math.floor(index / 4)).padStart(2, '0')
+    const minute = String((index % 4) * 15).padStart(2, '0')
+    return `${hour}:${minute}`
+  }),
+  '23:59',
+]
 
 const AdminDashboard = () => {
   const { logout, authFetch, isAdmin } = useAdmin()
@@ -11,7 +20,9 @@ const AdminDashboard = () => {
     { id: 'overview', label: 'Tổng quan', icon: ChartIcon },
     { id: 'appointments', label: 'Lịch hẹn', icon: CalendarIcon },
     { id: 'contacts', label: 'Liên hệ', icon: MailIcon },
-    { id: 'news', label: 'Tin tức', icon: SparkIcon },
+    { id: 'services', label: 'Dịch vụ', icon: PawIcon },
+    { id: 'promotions', label: 'Khuyến mãi', icon: SparkIcon },
+    { id: 'news', label: 'Tin tức', icon: MegaphoneIcon },
   ]
 
   useEffect(() => {
@@ -103,6 +114,8 @@ const AdminDashboard = () => {
             {activeTab === 'overview' && <OverviewTab stats={stats} />}
             {activeTab === 'appointments' && <AppointmentsTab authFetch={authFetch} />}
             {activeTab === 'contacts' && <ContactsTab authFetch={authFetch} />}
+            {activeTab === 'services' && <CatalogTab type="services" authFetch={authFetch} />}
+            {activeTab === 'promotions' && <CatalogTab type="promotions" authFetch={authFetch} />}
             {activeTab === 'news' && <NewsTab authFetch={authFetch} />}
           </main>
         </div>
@@ -118,7 +131,7 @@ const OverviewTab = ({ stats }) => {
     { label: 'Tổng lịch đặt', value: stats.totalAppointments, icon: CalendarIcon },
     { label: 'Chờ xác nhận', value: stats.pendingAppointments, icon: ClockIcon },
     { label: 'Ý kiến liên hệ', value: stats.totalContacts, icon: MailIcon },
-    { label: 'Bài viết tin tức', value: stats.totalNews, icon: SparkIcon },
+    { label: 'Bài viết tin tức', value: stats.totalNews, icon: MegaphoneIcon },
   ]
 
   return (
@@ -230,6 +243,7 @@ const AppointmentsTab = ({ authFetch }) => {
                   {item.phone} · {item.date}{item.checkoutDate ? ` → ${item.checkoutDate}` : ''}{item.timeSlot ? ` · ${item.timeSlot}` : ''}
                 </p>
                 {item.notes && <p className="text-xs text-text-light italic">{item.notes}</p>}
+                {item.discountPercent > 0 && <p className="text-xs font-semibold text-green-700">Ưu đãi: {item.appliedPromotionTitle} (-{item.discountPercent}%)</p>}
               </div>
               <div className="flex gap-2 shrink-0 flex-wrap">
                 {item.status === 'PENDING' && (
@@ -353,6 +367,301 @@ const ContactsTab = ({ authFetch }) => {
   )
 }
 
+const CatalogTab = ({ type, authFetch }) => {
+  const isService = type === 'services'
+  const empty = isService
+    ? { code: '', title: '', price: '', priceLabel: '', unit: 'lượt', description: '', bulletPoints: [''], imageUrls: [''], active: true, sortOrder: 0 }
+    : { title: '', description: '', promotionType: 'PREBOOK', discountPercent: 10, advanceHours: 24, startDate: '', endDate: '', startTime: '00:00', endTime: '23:59', imageUrl: '', serviceCode: '', tiers: [], active: true }
+  const [list, setList] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [editing, setEditing] = useState(null)
+  const [form, setForm] = useState(empty)
+  const [saving, setSaving] = useState(false)
+  const [cloudifyingRows, setCloudifyingRows] = useState([])
+  const [serviceOptions, setServiceOptions] = useState([])
+  const imageUrlTimers = useRef({})
+
+  const load = useCallback(async () => {
+    setLoading(true)
+    try { setList(await authFetch(`/${type}`)) } catch { setList([]) } finally { setLoading(false) }
+  }, [authFetch, type])
+
+  useEffect(() => {
+    load()
+    if (!isService) authFetch('/services').then(setServiceOptions).catch(() => setServiceOptions([]))
+  }, [load, isService, authFetch])
+
+  const openNew = () => { setForm(empty); setEditing('new') }
+  const openEdit = item => {
+    const promotionText = `${item.title || ''} ${item.description || ''}`.toLowerCase()
+    const looksLikeTimeSlot = /giờ vàng|khung giờ|theo giờ/.test(promotionText)
+    const inferredPromotionType = item.tiers?.length
+      ? 'LONG_STAY'
+      : (item.startTime && item.endTime) || looksLikeTimeSlot
+        ? 'TIME_SLOT'
+        : item.promotionType || 'PREBOOK'
+    setForm(isService ? {
+      ...item,
+      price: item.price ?? '',
+      bulletPoints: item.bulletPoints?.length ? [...item.bulletPoints] : [''],
+      imageUrls: item.imageUrls?.length ? [...item.imageUrls] : [''],
+    } : {
+      ...item,
+      promotionType: inferredPromotionType,
+      advanceHours: item.advanceHours || 24,
+      tiers: item.tiers?.length ? item.tiers.map(tier => ({ ...tier })) : [],
+      startTime: inferredPromotionType === 'TIME_SLOT' ? (item.startTime || '00:00') : (item.startTime || ''),
+      endTime: inferredPromotionType === 'TIME_SLOT' ? (item.endTime || '23:59') : (item.endTime || ''),
+      startDate: item.startDate || '',
+      endDate: item.endDate || '',
+      serviceCode: item.serviceCode || '',
+    })
+    setEditing(item)
+  }
+
+  const save = async () => {
+    if (!form.title || (isService && !form.code)) return alert('Vui lòng nhập đầy đủ tên và mã.')
+    if (!isService && form.promotionType === 'TIME_SLOT') {
+      if (!form.startTime || !form.endTime) return alert('Vui lòng chọn đầy đủ giờ bắt đầu và giờ kết thúc.')
+      if (form.startTime >= form.endTime) return alert('Giờ kết thúc phải sau giờ bắt đầu.')
+    }
+    if (!isService && form.promotionType === 'LONG_STAY') {
+      const activeTiers = (form.tiers || []).filter(tier => Number(tier.minDays) > 0)
+      if (activeTiers.length === 0) {
+        return alert('Vui lòng nhập ít nhất một mốc giảm giá cho loại ưu đãi Ở càng lâu.')
+      }
+    }
+    const payload = isService ? {
+      ...form,
+      price: form.price === '' ? null : Number(form.price),
+      sortOrder: Number(form.sortOrder || 0),
+      bulletPoints: (form.bulletPoints || []).map(v => v.trim()).filter(Boolean),
+      imageUrls: (form.imageUrls || []).map(v => v.trim()).filter(Boolean),
+    } : {
+      ...form,
+      promotionType: form.promotionType,
+      advanceHours: form.promotionType === 'PREBOOK' ? Number(form.advanceHours || 24) : null,
+      discountPercent: form.promotionType === 'LONG_STAY'
+        ? Math.max(0, ...(form.tiers || []).map(tier => Number(tier.discountPercent || 0)))
+        : Number(form.discountPercent || 0),
+      tiers: form.promotionType === 'LONG_STAY'
+        ? (form.tiers || []).map(tier => ({ minDays: Number(tier.minDays), maxDays: tier.maxDays === '' || tier.maxDays == null ? null : Number(tier.maxDays), discountPercent: Number(tier.discountPercent || 0) })).filter(tier => tier.minDays > 0)
+        : [],
+    }
+    setSaving(true)
+    try {
+      const saved = await authFetch(editing === 'new' ? `/${type}` : `/${type}/${editing.id}`, {
+        method: editing === 'new' ? 'POST' : 'PUT', body: JSON.stringify(payload),
+      })
+      setList(prev => editing === 'new' ? [...prev, saved] : prev.map(v => v.id === saved.id ? saved : v))
+      setEditing(null)
+    } catch (error) { alert(`Không thể lưu: ${error.message}`) } finally { setSaving(false) }
+  }
+
+  const del = async item => {
+    if (!window.confirm(`Xóa “${item.title}”?`)) return
+    try { await authFetch(`/${type}/${item.id}`, { method: 'DELETE' }); setList(prev => prev.filter(v => v.id !== item.id)) }
+    catch (error) { alert(error.message) }
+  }
+
+  const cloudifyImageUrl = async (index, sourceUrl) => {
+    if (!/^https?:\/\//i.test(sourceUrl) || sourceUrl.includes('res.cloudinary.com')) return
+    setCloudifyingRows(prev => [...new Set([...prev, index])])
+    try {
+      const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'dpgr5y84c'
+      const preset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'pethome_preset'
+      const data = new FormData()
+      data.append('file', sourceUrl)
+      data.append('upload_preset', preset)
+      const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, { method: 'POST', body: data })
+      if (!response.ok) throw new Error('Cloudinary không thể tải ảnh từ URL này')
+      const cloudinaryUrl = (await response.json()).secure_url
+      setForm(prev => ({ ...prev, imageUrls: prev.imageUrls.map((value, i) => i === index && value === sourceUrl ? cloudinaryUrl : value) }))
+    } catch (error) {
+      alert(error.message)
+    } finally {
+      setCloudifyingRows(prev => prev.filter(row => row !== index))
+    }
+  }
+
+  const handleImageUrlChange = (index, value) => {
+    setForm(prev => ({ ...prev, imageUrls: prev.imageUrls.map((current, i) => i === index ? value : current) }))
+    window.clearTimeout(imageUrlTimers.current[index])
+    if (/^https?:\/\//i.test(value) && !value.includes('res.cloudinary.com')) {
+      imageUrlTimers.current[index] = window.setTimeout(() => cloudifyImageUrl(index, value.trim()), 900)
+    }
+  }
+
+  return <>
+    <Panel title={isService ? 'Quản lý dịch vụ' : 'Quản lý khuyến mãi'} icon={isService ? PawIcon : SparkIcon}>
+      <div className="flex justify-end mb-5">
+        <button type="button" onClick={openNew} className="btn-accent rounded-btn px-5 py-2.5 text-xs font-semibold flex items-center gap-2">
+          <PlusIcon size={14} /> {isService ? 'Thêm dịch vụ' : 'Thêm khuyến mãi'}
+        </button>
+      </div>
+      {loading ? <LoadingSpinner /> : list.length === 0 ? <EmptyState msg="Chưa có dữ liệu" /> : (
+        <div className="grid md:grid-cols-2 gap-4">
+          {list.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0)).map(item => (
+            <article key={item.id} className="border border-border-light rounded-card p-4 flex gap-4">
+              {item.imageUrl || item.imageUrls?.[0] ? <img src={item.imageUrl || item.imageUrls[0]} alt="" className="w-20 h-20 rounded-btn object-cover bg-bg-light" /> : null}
+              <div className="min-w-0 flex-1">
+                <div className="flex items-start justify-between gap-2">
+                  <div><h3 className="font-bold text-brown-dark text-sm">{item.title}</h3><p className="text-[11px] text-muted">{isService ? item.code : `${item.promotionType === 'LONG_STAY' || item.tiers?.length ? 'Ở càng lâu càng giảm' : item.promotionType === 'TIME_SLOT' ? `Khung giờ ${item.startTime || '?'}–${item.endTime || '?'}` : 'Đặt lịch trước'} · giảm đến ${item.discountPercent || 0}%`}</p></div>
+                  <span className={`text-[10px] font-bold rounded-pill px-2 py-1 ${item.active ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-muted'}`}>{item.active ? 'Đang hiện' : 'Đã ẩn'}</span>
+                </div>
+                <p className="text-xs text-text-light line-clamp-2 my-2">{item.description}</p>
+                {isService && <p className="font-bold text-primary text-xs">{item.price != null ? `${Number(item.price).toLocaleString('vi-VN')}đ` : item.priceLabel} / {item.unit}</p>}
+                <div className="flex gap-2 mt-3"><IconButton onClick={() => openEdit(item)} ariaLabel="Chỉnh sửa"><EditIcon size={14} /></IconButton><IconButton onClick={() => del(item)} ariaLabel="Xóa" tone="danger"><TrashIcon size={14} /></IconButton></div>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </Panel>
+
+    {editing !== null && <div className="fixed inset-0 bg-brown-dark/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-card shadow-high p-6 w-full max-w-2xl max-h-[92vh] overflow-y-auto">
+        <div className="flex justify-between items-center mb-5"><h3 className="font-heading font-bold text-lg">{editing === 'new' ? 'Thêm mới' : 'Chỉnh sửa'} {isService ? 'dịch vụ' : 'khuyến mãi'}</h3><button onClick={() => setEditing(null)}><CloseIcon size={18} /></button></div>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {isService && <FormField label="Mã dịch vụ (*)"><input className={fieldCls} disabled={editing !== 'new'} value={form.code || ''} onChange={e => setForm({...form, code: e.target.value.trim().toLowerCase().replace(/\s+/g, '_')})} placeholder="grooming" /></FormField>}
+          <FormField label="Tên (*)"><input className={fieldCls} value={form.title || ''} onChange={e => setForm({...form, title: e.target.value})} /></FormField>
+          {isService ? <>
+            <FormField label="Giá (VNĐ)"><input type="number" min="0" className={fieldCls} value={form.price ?? ''} onChange={e => setForm({...form, price: e.target.value})} placeholder="Để trống nếu tùy loại" /></FormField>
+            <FormField label="Nhãn giá"><input className={fieldCls} value={form.priceLabel || ''} onChange={e => setForm({...form, priceLabel: e.target.value})} placeholder="Tùy loại" /></FormField>
+            <FormField label="Đơn vị"><input className={fieldCls} value={form.unit || ''} onChange={e => setForm({...form, unit: e.target.value})} /></FormField>
+            <FormField label="Thứ tự"><input type="number" className={fieldCls} value={form.sortOrder || 0} onChange={e => setForm({...form, sortOrder: e.target.value})} /></FormField>
+          </> : <>
+            <div className="sm:col-span-2">
+              <FormField label="Loại khuyến mãi (*)">
+                <select
+                  className={fieldCls}
+                  value={form.promotionType || 'PREBOOK'}
+                  onChange={e => {
+                    const promotionType = e.target.value
+                    setForm(prev => ({
+                      ...prev,
+                      promotionType,
+                      serviceCode: promotionType === 'LONG_STAY' ? 'boarding' : prev.serviceCode,
+                      startTime: promotionType === 'TIME_SLOT' ? (prev.startTime || '00:00') : prev.startTime,
+                      endTime: promotionType === 'TIME_SLOT' ? (prev.endTime || '23:59') : prev.endTime,
+                      tiers: promotionType === 'LONG_STAY' && !prev.tiers?.length
+                        ? [{ minDays: 1, maxDays: 3, discountPercent: 0 }, { minDays: 4, maxDays: 7, discountPercent: 5 }, { minDays: 8, maxDays: 14, discountPercent: 10 }, { minDays: 15, maxDays: '', discountPercent: 15 }]
+                        : prev.tiers,
+                    }))
+                  }}
+                >
+                  <option value="PREBOOK">Đặt lịch trước — giảm theo phần trăm</option>
+                  <option value="LONG_STAY">Ở càng lâu — giảm theo số ngày</option>
+                  <option value="TIME_SLOT">Khung giờ cụ thể — giảm theo giờ</option>
+                </select>
+              </FormField>
+            </div>
+            <FormField label="Dịch vụ áp dụng">
+              <select className={fieldCls} value={form.serviceCode || ''} onChange={e => setForm({...form, serviceCode: e.target.value})}>
+                <option value="">Tất cả dịch vụ</option>
+                {serviceOptions.map(service => <option key={service.id} value={service.code}>{service.title}</option>)}
+              </select>
+            </FormField>
+            {form.promotionType === 'PREBOOK' && <>
+              <FormField label="Phần trăm giảm"><input type="number" min="0" max="100" className={fieldCls} value={form.discountPercent || 0} onChange={e => setForm({...form, discountPercent: e.target.value})} /></FormField>
+              <FormField label="Đặt trước tối thiểu (giờ)"><input type="number" min="1" className={fieldCls} value={form.advanceHours || 24} onChange={e => setForm({...form, advanceHours: e.target.value})} /></FormField>
+            </>}
+            {form.promotionType === 'TIME_SLOT' && <>
+              <FormField label="Phần trăm giảm"><input type="number" min="0" max="100" className={fieldCls} value={form.discountPercent || 0} onChange={e => setForm({...form, discountPercent: e.target.value})} /></FormField>
+              <FormField label="Giờ bắt đầu (24 giờ)">
+                <select className={fieldCls} value={form.startTime || '00:00'} onChange={e => setForm({...form, startTime: e.target.value})}>
+                  {TIME_OPTIONS.map(time => <option key={`start-${time}`} value={time}>{time}</option>)}
+                </select>
+              </FormField>
+              <FormField label="Giờ kết thúc (24 giờ)">
+                <select className={fieldCls} value={form.endTime || '23:59'} onChange={e => setForm({...form, endTime: e.target.value})}>
+                  {TIME_OPTIONS.map(time => <option key={`end-${time}`} value={time}>{time}</option>)}
+                </select>
+              </FormField>
+            </>}
+            <FormField label="Ngày bắt đầu"><input type="date" className={fieldCls} value={form.startDate || ''} onChange={e => setForm({...form, startDate: e.target.value})} /></FormField>
+            <FormField label="Ngày kết thúc"><input type="date" className={fieldCls} value={form.endDate || ''} onChange={e => setForm({...form, endDate: e.target.value})} /></FormField>
+            <FormField label="URL ảnh"><input className={fieldCls} value={form.imageUrl || ''} onChange={e => setForm({...form, imageUrl: e.target.value})} /></FormField>
+            {form.promotionType === 'LONG_STAY' && <div className="sm:col-span-2">
+              <FormField label="Các mốc giảm theo số ngày">
+                <div className="space-y-3">
+                  {(form.tiers || []).map((tier, index) => (
+                    <div key={index} className="grid grid-cols-[1fr_1fr_1fr_auto] gap-2 items-end rounded-card border border-border-light bg-bg-light p-3">
+                      <div><label className="text-[10px] font-bold text-muted">TỪ NGÀY</label><input type="number" min="1" className={fieldCls + ' bg-white'} value={tier.minDays} onChange={e => setForm(prev => ({...prev, tiers: prev.tiers.map((value, i) => i === index ? {...value, minDays: e.target.value} : value)}))} /></div>
+                      <div><label className="text-[10px] font-bold text-muted">ĐẾN NGÀY</label><input type="number" min="1" className={fieldCls + ' bg-white'} value={tier.maxDays ?? ''} onChange={e => setForm(prev => ({...prev, tiers: prev.tiers.map((value, i) => i === index ? {...value, maxDays: e.target.value} : value)}))} placeholder="Không giới hạn" /></div>
+                      <div><label className="text-[10px] font-bold text-muted">GIẢM %</label><input type="number" min="0" max="100" className={fieldCls + ' bg-white'} value={tier.discountPercent} onChange={e => setForm(prev => ({...prev, tiers: prev.tiers.map((value, i) => i === index ? {...value, discountPercent: e.target.value} : value)}))} /></div>
+                      <IconButton onClick={() => setForm(prev => ({...prev, tiers: prev.tiers.filter((_, i) => i !== index)}))} ariaLabel="Xóa mốc" tone="danger"><TrashIcon size={14} /></IconButton>
+                    </div>
+                  ))}
+                  <button type="button" onClick={() => setForm(prev => ({...prev, tiers: [...(prev.tiers || []), {minDays: '', maxDays: '', discountPercent: 0}]}))} className="btn-outline px-4 py-2 text-xs"><PlusIcon size={13} /> Thêm mốc giảm</button>
+                </div>
+              </FormField>
+            </div>}
+          </>}
+          <div className="sm:col-span-2"><FormField label="Mô tả"><textarea className={fieldCls + ' h-24 resize-y'} value={form.description || ''} onChange={e => setForm({...form, description: e.target.value})} /></FormField></div>
+          {isService && <>
+            <div className="sm:col-span-2">
+              <FormField label="Quyền lợi dịch vụ">
+                <div className="space-y-3">
+                  {(form.bulletPoints || ['']).map((benefit, index) => (
+                    <div key={index} className="flex items-center gap-2 rounded-card border border-border-light bg-bg-light p-2">
+                      <span className="w-9 h-9 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0">{index + 1}</span>
+                      <input
+                        className={fieldCls + ' flex-1 bg-white'}
+                        value={benefit}
+                        onChange={e => setForm(prev => ({ ...prev, bulletPoints: prev.bulletPoints.map((value, i) => i === index ? e.target.value : value) }))}
+                        placeholder={`Quyền lợi ${index + 1}`}
+                      />
+                      <IconButton
+                        onClick={() => setForm(prev => ({ ...prev, bulletPoints: prev.bulletPoints.length === 1 ? [''] : prev.bulletPoints.filter((_, i) => i !== index) }))}
+                        ariaLabel="Xóa quyền lợi"
+                        tone="danger"
+                      ><TrashIcon size={14} /></IconButton>
+                    </div>
+                  ))}
+                  <button type="button" onClick={() => setForm(prev => ({ ...prev, bulletPoints: [...(prev.bulletPoints || []), ''] }))} className="btn-outline rounded-btn px-4 py-2 text-xs font-semibold flex items-center gap-1.5"><PlusIcon size={13} /> Thêm quyền lợi</button>
+                </div>
+              </FormField>
+            </div>
+            <div className="sm:col-span-2">
+              <FormField label="Hình ảnh dịch vụ">
+                <div className="space-y-3">
+                  {(form.imageUrls || ['']).map((url, index) => (
+                    <div key={index} className="flex items-center gap-2 rounded-card border border-border-light bg-bg-light p-2">
+                      <div className="w-14 h-14 rounded-btn border border-border-light bg-white overflow-hidden shrink-0 flex items-center justify-center">
+                        {url ? <img src={url} alt={`Ảnh ${index + 1}`} className="w-full h-full object-cover" /> : <span className="text-[9px] text-muted">Ảnh {index + 1}</span>}
+                      </div>
+                      <input
+                        className={fieldCls + ' flex-1 bg-white'}
+                        value={url}
+                        onChange={e => handleImageUrlChange(index, e.target.value)}
+                        placeholder={`URL ảnh ${index + 1}`}
+                        disabled={cloudifyingRows.includes(index)}
+                      />
+                      {cloudifyingRows.includes(index) && <span className="text-[10px] font-semibold text-primary whitespace-nowrap flex items-center gap-1"><span className="w-3 h-3 border-2 border-primary/20 border-t-primary rounded-full animate-spin" /> Đang lưu</span>}
+                      <IconButton
+                        onClick={() => setForm(prev => ({ ...prev, imageUrls: prev.imageUrls.length === 1 ? [''] : prev.imageUrls.filter((_, i) => i !== index) }))}
+                        ariaLabel="Xóa ảnh"
+                        tone="danger"
+                      ><TrashIcon size={14} /></IconButton>
+                    </div>
+                  ))}
+                  <div className="flex flex-wrap gap-2">
+                    <button type="button" onClick={() => setForm(prev => ({ ...prev, imageUrls: [...(prev.imageUrls || []), ''] }))} className="btn-outline rounded-btn px-4 py-2 text-xs font-semibold flex items-center gap-1.5"><PlusIcon size={13} /> Thêm dòng URL</button>
+                  </div>
+                  <p className="text-[10px] text-muted">Dán URL ảnh để hệ thống tự lưu lên Cloudinary. Mỗi ảnh là một dòng riêng.</p>
+                </div>
+              </FormField>
+            </div>
+          </>}
+          <label className="flex items-center gap-2 text-xs font-bold"><input type="checkbox" checked={form.active !== false} onChange={e => setForm({...form, active: e.target.checked})} /> Hiển thị trên website</label>
+        </div>
+        <div className="flex gap-3 mt-6"><button onClick={() => setEditing(null)} className="flex-1 btn-outline py-2.5">Hủy</button><button onClick={save} disabled={saving} className="flex-1 btn-accent py-2.5 disabled:opacity-60">{saving ? 'Đang lưu...' : 'Lưu'}</button></div>
+      </div>
+    </div>}
+  </>
+}
+
 const NewsTab = ({ authFetch }) => {
   const [list, setList] = useState([])
   const [loading, setLoading] = useState(true)
@@ -462,7 +771,7 @@ const NewsTab = ({ authFetch }) => {
 
   return (
     <>
-      <Panel title="Danh sách bài viết tin tức & chia sẻ" icon={SparkIcon}>
+      <Panel title="Danh sách bài viết tin tức & chia sẻ" icon={MegaphoneIcon}>
         <div className="flex justify-end mb-5">
           <button type="button" onClick={openNew} className="btn-accent rounded-btn px-5 py-2.5 text-xs font-semibold flex items-center gap-1.5 shadow-sm">
             <PlusIcon size={14} />
@@ -747,6 +1056,7 @@ const BoxIcon = ({ size }) => <Svg size={size}><path d="M21 8a2 2 0 0 0-1-1.73L1
 const BagIcon = ({ size }) => <Svg size={size}><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" /></Svg>
 const ClockIcon = ({ size }) => <Svg size={size}><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></Svg>
 const SparkIcon = ({ size }) => <Svg size={size}><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z" /><path d="M5 3v4" /><path d="M3 5h4" /><path d="M19 17v4" /><path d="M17 19h4" /></Svg>
+const MegaphoneIcon = ({ size = 16 }) => <img src="/megaphone.png" alt="" width={size} height={size} className="object-contain" />
 const LogoutIcon = ({ size }) => <Svg size={size}><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><path d="m16 17 5-5-5-5" /><path d="M21 12H9" /></Svg>
 const SearchIcon = ({ size }) => <Svg size={size}><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></Svg>
 const PlusIcon = ({ size }) => <Svg size={size}><path d="M12 5v14" /><path d="M5 12h14" /></Svg>

@@ -1,16 +1,39 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
+import { fetchPromotions, fetchServices } from '../utils/api'
+
+const DEFAULT_BOARDING_TIERS = [
+  { minDays: 1, maxDays: 3, discountPercent: 0 },
+  { minDays: 4, maxDays: 7, discountPercent: 5 },
+  { minDays: 8, maxDays: 14, discountPercent: 10 },
+  { minDays: 15, maxDays: null, discountPercent: 15 },
+]
+
+const formatDealDate = value => value
+  ? value.split('-').reverse().join('/')
+  : null
 
 const Deals = () => {
   const { lang, t } = useLanguage()
+  const [managedPromotions, setManagedPromotions] = useState([])
+  const [managedServices, setManagedServices] = useState([])
+
+  useEffect(() => {
+    fetchPromotions().then(data => setManagedPromotions(Array.isArray(data) ? data : [])).catch(() => {})
+    fetchServices().then(data => setManagedServices(Array.isArray(data) ? data : [])).catch(() => {})
+  }, [])
+  const boardingPromotion = managedPromotions
+    .filter(item => item.serviceCode === 'boarding' && item.tiers?.length)
+    .sort((a, b) => Math.max(...b.tiers.map(tier => Number(tier.discountPercent || 0))) - Math.max(...a.tiers.map(tier => Number(tier.discountPercent || 0))))[0]
+  const boardingTiers = boardingPromotion?.tiers || DEFAULT_BOARDING_TIERS
+  const boardingPrice = Number(managedServices.find(item => item.code === 'boarding')?.price || 250000)
   
   // Boarding Calculator state
   const [checkin, setCheckin] = useState('')
   const [checkout, setCheckout] = useState('')
   const [days, setDays] = useState(0)
   const [discountPercent, setDiscountPercent] = useState(0)
-  const [pricePerDay, setPricePerDay] = useState(250000)
   const [originalTotal, setOriginalTotal] = useState(0)
   const [discountedTotal, setDiscountedTotal] = useState(0)
   const [savings, setSavings] = useState(0)
@@ -34,19 +57,13 @@ const Deals = () => {
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1
         setDays(diffDays)
         
-        let pct = 0
-        if (diffDays >= 15) {
-          pct = 15
-        } else if (diffDays >= 8) {
-          pct = 10
-        } else if (diffDays >= 4) {
-          pct = 5
-        }
+        const matchingTier = boardingTiers.find(tier => diffDays >= tier.minDays && (!tier.maxDays || diffDays <= tier.maxDays))
+        const pct = Number(matchingTier?.discountPercent || 0)
         
         setDiscountPercent(pct)
         
-        const orig = diffDays * 250000
-        const discPrice = 250000 * (1 - pct / 100)
+        const orig = diffDays * boardingPrice
+        const discPrice = boardingPrice * (1 - pct / 100)
         const finalCost = diffDays * discPrice
         
         setOriginalTotal(orig)
@@ -66,7 +83,7 @@ const Deals = () => {
       setDiscountedTotal(0)
       setSavings(0)
     }
-  }, [checkin, checkout])
+  }, [checkin, checkout, boardingTiers, boardingPrice])
 
   // Validate grooming prebook (must be at least 1 day in the future)
   useEffect(() => {
@@ -159,6 +176,41 @@ const Deals = () => {
           
         </div>
       </section>
+
+      {managedPromotions.length > 0 && (
+        <section className="py-12 bg-[#fff8f5] border-b border-border-light">
+          <div className="container-site max-w-6xl">
+            <div className="text-center mb-7">
+              <p className="text-[11px] uppercase tracking-widest font-bold text-primary">Cập nhật từ Pet Home</p>
+              <h2 className="font-heading font-bold text-brown-dark text-2xl mt-1">Khuyến mãi đang áp dụng</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {managedPromotions.map(promotion => (
+                <article key={promotion.id} className="bg-white border border-border-light rounded-card overflow-hidden shadow-low flex flex-col">
+                  {promotion.imageUrl && <img src={promotion.imageUrl} alt={promotion.title} className="w-full h-40 object-cover" />}
+                  <div className="p-5 flex-1 flex flex-col">
+                    <span className="self-start rounded-pill bg-primary text-white font-bold text-xs px-3 py-1 mb-3">Giảm {promotion.discountPercent || 0}%</span>
+                    <h3 className="font-heading font-bold text-brown-dark text-lg">{promotion.title}</h3>
+                    <p className="text-xs text-text-light leading-relaxed mt-2 flex-1">{promotion.description}</p>
+                    {promotion.promotionType === 'TIME_SLOT' && promotion.startTime && promotion.endTime && <p className="mt-3 rounded-pill bg-amber-50 text-amber-700 px-3 py-1.5 text-[11px] font-bold self-start">Khung giờ: {promotion.startTime} – {promotion.endTime}</p>}
+                    {(promotion.startDate || promotion.endDate) && (
+                      <div className="mt-4 rounded-card border border-primary/20 bg-primary/[0.06] px-3.5 py-3">
+                        <p className="text-[10px] uppercase tracking-wider font-extrabold text-primary flex items-center gap-1.5 mb-1">
+                          <span aria-hidden="true">📅</span> Thời gian áp dụng
+                        </p>
+                        <p className="text-xs font-extrabold text-brown-dark">
+                          {formatDealDate(promotion.startDate) || 'Từ hiện tại'} — {formatDealDate(promotion.endDate) || 'Không giới hạn'}
+                        </p>
+                      </div>
+                    )}
+                    <Link to="/services" className="btn-accent rounded-pill py-2.5 mt-4">Đặt lịch nhận ưu đãi</Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Deal 1: Grooming Pre-book — Images RIGHT */}
       <section className="py-16 bg-white relative overflow-hidden">
@@ -303,44 +355,41 @@ const Deals = () => {
               <div className="flex items-center gap-2">
                 <span className="w-8 h-[2px] bg-orange-500" />
                 <span className="text-[11px] font-bold uppercase tracking-wider text-orange-500">
-                  LƯU TRÚ LÂU DÀI — GIẢM ĐẾN 15%
+                  LƯU TRÚ LÂU DÀI — GIẢM ĐẾN {Math.max(...boardingTiers.map(tier => Number(tier.discountPercent || 0)))}%
                 </span>
               </div>
 
               <h2 className="font-heading font-extrabold text-brown-dark text-3xl sm:text-4xl leading-tight">
-                Ưu Đãi Trông Giữ <br />
-                <span className="italic text-orange-500 drop-shadow-[1px_1px_0px_rgba(0,0,0,0.15)] relative inline-block">
-                  Thú Cưng
-                </span>
+                {boardingPromotion?.title || 'Ưu Đãi Trông Giữ Thú Cưng'}
               </h2>
 
               <p className="text-xs sm:text-sm text-[#555555] leading-relaxed">
-                Gửi trông giữ càng lâu — Chiết khấu càng sâu. Chính sách chiết khấu lũy tiến:
+                {boardingPromotion?.description || 'Gửi trông giữ càng lâu — Chiết khấu càng sâu. Chính sách chiết khấu lũy tiến:'}
               </p>
 
               {/* Discount Tiers */}
               <div className="grid grid-cols-2 gap-3 text-xs">
-                {[
-                  { range: '1 - 3 ngày', discount: 'Giá gốc (250K/ngày)', active: days > 0 && days <= 3, highlight: 'Không giảm' },
-                  { range: '4 - 7 ngày', discount: 'Giảm 5% (237.5K/ngày)', active: days >= 4 && days <= 7, highlight: 'Giảm 5%' },
-                  { range: '8 - 14 ngày', discount: 'Giảm 10% (225K/ngày)', active: days >= 8 && days <= 14, highlight: 'Giảm 10%' },
-                  { range: 'Trên 14 ngày', discount: 'Giảm 15% (212.5K/ngày)', active: days >= 15, highlight: 'Giảm 15%' },
-                ].map((tier, idx) => (
+                {boardingTiers.map((tier, idx) => {
+                  const active = days >= tier.minDays && (!tier.maxDays || days <= tier.maxDays)
+                  const range = tier.maxDays ? `${tier.minDays} - ${tier.maxDays} ngày` : `Từ ${tier.minDays} ngày`
+                  const highlight = Number(tier.discountPercent) > 0 ? `Giảm ${tier.discountPercent}%` : 'Không giảm'
+                  return (
                   <div
                     key={idx}
                     className={`p-3 rounded-2xl border transition-all duration-300 ${
-                      tier.active
+                      active
                         ? 'border-orange-400 bg-gradient-to-br from-[#fff8eb] to-[#fffdfa] font-bold text-brown-dark shadow-md ring-2 ring-orange-400/15'
                         : 'bg-white border-[#eeeeee] hover:border-orange-300 text-[#555555] hover:shadow-sm'
                     }`}
                   >
                     <div className="text-[10px] text-muted font-bold uppercase tracking-wider mb-1">Lưu trú</div>
-                    <div className="font-heading font-extrabold text-sm text-brown-dark">{tier.range}</div>
+                    <div className="font-heading font-extrabold text-sm text-brown-dark">{range}</div>
                     <div className="border-t border-dashed border-brown-dark/10 pt-1.5 mt-1.5">
-                      <span className="text-orange-500 font-extrabold text-[11px]">{tier.highlight}</span>
+                      <span className="text-orange-500 font-extrabold text-[11px]">{highlight}</span>
                     </div>
                   </div>
-                ))}
+                  )
+                })}
               </div>
 
               {/* Calculator */}

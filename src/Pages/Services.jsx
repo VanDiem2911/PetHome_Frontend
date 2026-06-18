@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
-import { bookAppointment, fetchBookedSlots } from '../utils/api'
+import { bookAppointment, fetchBookedSlots, fetchServices, fetchPromotions } from '../utils/api'
 
 const ServiceGallery = ({ images, title }) => {
   const [activeIdx, setActiveIdx] = useState(0)
@@ -50,8 +50,10 @@ const Services = () => {
   const [bookedSlots, setBookedSlots] = useState([])
   const [loadingSlots, setLoadingSlots] = useState(false)
   const [priceListType, setPriceListType] = useState(null) // 'grooming' | 'home_service'
+  const [managedServices, setManagedServices] = useState([])
+  const [managedPromotions, setManagedPromotions] = useState([])
 
-  const servicesList = [
+  const defaultServices = [
     {
       id: 'grooming',
       title: t('serviceGroomingTitle'),
@@ -144,6 +146,64 @@ const Services = () => {
     }
   ]
 
+  const servicesList = managedServices.length > 0
+    ? managedServices.map((managed, index) => {
+        const fallback = defaultServices.find(item => item.id === managed.code) || defaultServices[index % defaultServices.length]
+        return {
+          ...fallback,
+          id: managed.code,
+          title: managed.title,
+          price: managed.price ?? managed.priceLabel ?? 'Liên hệ',
+          unit: managed.unit || fallback.unit,
+          desc: managed.description || fallback.desc,
+          bulletPoints: managed.bulletPoints?.length ? managed.bulletPoints : fallback.bulletPoints,
+          images: managed.imageUrls?.length ? managed.imageUrls : fallback.images,
+        }
+      })
+    : defaultServices
+
+  useEffect(() => {
+    fetchServices().then(data => setManagedServices(Array.isArray(data) ? data : [])).catch(() => {})
+    fetchPromotions(true).then(data => setManagedPromotions(Array.isArray(data) ? data : [])).catch(() => {})
+  }, [])
+
+  const getBestPromotion = (slot = formData.timeSlot) => {
+    if (!selectedService || !formData.date) return null
+    const slotStart = slot?.slice(0, 5) || '23:59'
+    const eligible = managedPromotions.flatMap(promotion => {
+      if (promotion.serviceCode && promotion.serviceCode !== selectedService.id) return []
+      if (promotion.startDate && formData.date < promotion.startDate) return []
+      if (promotion.endDate && formData.date > promotion.endDate) return []
+
+      const promotionType = promotion.promotionType || (promotion.tiers?.length ? 'LONG_STAY' : 'PREBOOK')
+      let effectiveDiscount = Number(promotion.discountPercent || 0)
+
+      if (promotionType === 'TIME_SLOT') {
+        if (!slot || slotStart < promotion.startTime || slotStart >= promotion.endTime) return []
+      } else if (promotionType === 'PREBOOK') {
+        const appointmentAt = new Date(`${formData.date}T${slotStart}:00`)
+        const hoursAhead = (appointmentAt - new Date()) / (1000 * 60 * 60)
+        if (hoursAhead < Number(promotion.advanceHours || 24)) return []
+      } else if (promotionType === 'LONG_STAY') {
+        if (!formData.checkoutDate) return []
+        const days = Math.max(1, Math.round((new Date(formData.checkoutDate) - new Date(formData.date)) / 86400000) + 1)
+        const tier = promotion.tiers?.find(item => days >= item.minDays && (!item.maxDays || days <= item.maxDays))
+        if (!tier) return []
+        effectiveDiscount = Number(tier.discountPercent || 0)
+      }
+      return [{ ...promotion, effectiveDiscount }]
+    })
+    return eligible.sort((a, b) => b.effectiveDiscount - a.effectiveDiscount)[0] || null
+  }
+
+  const formatPromotionText = (promotion) => {
+    if (!promotion) return ''
+    const title = promotion.title || ''
+    const discount = promotion.effectiveDiscount ?? promotion.discountPercent ?? 0
+    const hasDiscount = title.toLowerCase().includes(`giảm ${discount}%`)
+    return hasDiscount ? title : `${title} — giảm ${discount}%`
+  }
+
   // Auto-fill from URL parameters
   useEffect(() => {
     const serviceType = searchParams.get('service')
@@ -194,7 +254,19 @@ const Services = () => {
     e.preventDefault()
     setSubmitting(true)
     setBookError(null)
+
+    // Validate phone number format (must be 10-digit Vietnamese mobile number)
+    const phoneDigits = formData.phone.replace(/\D/g, '')
+    const normalizedPhone = phoneDigits.startsWith('84') ? '0' + phoneDigits.slice(2) : phoneDigits
+    const phoneRegex = /^0[35789]\d{8}$/
+    if (!phoneRegex.test(normalizedPhone)) {
+      setBookError('Số điện thoại không hợp lệ. Vui lòng nhập số di động Việt Nam gồm 10 chữ số (ví dụ: 0398752913).')
+      setSubmitting(false)
+      return
+    }
+
     try {
+      const bestPromotion = getBestPromotion()
       await bookAppointment({
         serviceType: selectedService.id,
         customerName: formData.name,
@@ -203,6 +275,9 @@ const Services = () => {
         checkoutDate: formData.checkoutDate || null,
         timeSlot: formData.timeSlot || null,
         notes: formData.notes || null,
+        appliedPromotionId: bestPromotion?.id || null,
+        appliedPromotionTitle: bestPromotion?.title || null,
+        discountPercent: bestPromotion?.effectiveDiscount || 0,
       })
       setBooked(true)
       setTimeout(() => {
@@ -210,8 +285,8 @@ const Services = () => {
         setSelectedService(null)
         setFormData({ name: '', phone: '', date: '', checkoutDate: '', timeSlot: '', notes: '' })
       }, 2500)
-    } catch {
-      setBookError('Có lỗi xảy ra, vui lòng thử lại.')
+    } catch (err) {
+      setBookError(err.message || 'Có lỗi xảy ra, vui lòng thử lại.')
     } finally {
       setSubmitting(false)
     }
@@ -270,7 +345,7 @@ const Services = () => {
                   {service.id === 'boarding' && (
                     <div className="inline-flex items-center self-start gap-2 rounded-pill bg-[#fff3e2] border border-[#ffe0b2] px-3.5 py-2 text-xs">
                       <span className="font-semibold text-brown-dark">Giá trông giữ:</span>
-                      <span className="font-extrabold text-primary">250.000đ/ngày</span>
+                      <span className="font-extrabold text-primary">{typeof service.price === 'number' ? service.price.toLocaleString('vi-VN') : service.price}đ/ngày</span>
                     </div>
                   )}
 
@@ -368,7 +443,7 @@ const Services = () => {
                     {t('bookService')}: {selectedService.title}
                   </h3>
                   {selectedService.id === 'boarding' && (
-                    <p className="font-bold text-primary text-sm">250.000đ/ngày</p>
+                    <p className="font-bold text-primary text-sm">{Number(selectedService.price || 0).toLocaleString('vi-VN')}đ/ngày</p>
                   )}
                   <p className="text-xs sm:text-sm text-muted">
                     {t('fillGroomingForm')}
@@ -438,12 +513,11 @@ const Services = () => {
                           const diff = d2 - d1
                           const days = Math.max(1, Math.round(diff / (1000 * 60 * 60 * 24)) + 1)
                           
-                          let pct = 0
-                          if (days >= 15) pct = 15
-                          else if (days >= 8) pct = 10
-                          else if (days >= 4) pct = 5
+                          const appliedPromotion = getBestPromotion()
+                          const pct = Number(appliedPromotion?.effectiveDiscount || 0)
                           
-                          const original = days * 250000
+                          const dailyPrice = Number(selectedService.price || 0)
+                          const original = days * dailyPrice
                           const savings = original * (pct / 100)
                           const finalPrice = original - savings
                           
@@ -455,10 +529,14 @@ const Services = () => {
                               </div>
                               <div className="flex justify-between">
                                 <span>Đơn giá gốc:</span>
-                                <span>250.000đ/ngày</span>
+                                <span>{dailyPrice.toLocaleString('vi-VN')}đ/ngày</span>
                               </div>
                               {pct > 0 ? (
                                 <>
+                                  <div className="flex justify-between text-green-700 font-semibold">
+                                    <span>Chương trình được chọn:</span>
+                                    <span>{appliedPromotion.title}</span>
+                                  </div>
                                   <div className="flex justify-between text-accent font-semibold">
                                     <span>Ưu đãi áp dụng:</span>
                                     <span>-{pct}%</span>
@@ -522,47 +600,41 @@ const Services = () => {
                             <option value="">{t('selectTimeSlot')}</option>
                             {getTimeSlots(selectedService.id).map(slot => {
                               const isBooked = bookedSlots.includes(slot)
+                              const promotion = getBestPromotion(slot)
                               return (
                                 <option key={slot} value={slot} disabled={isBooked}>
-                                  {isBooked ? `🔒 ${slot} — Đã đặt` : slot}
+                                  {isBooked ? `🔒 ${slot} — Đã đặt` : promotion ? `🎁 ${slot} — Giảm ${promotion.effectiveDiscount}%` : slot}
                                 </option>
                               )
                             })}
                           </select>
+                          {getBestPromotion(formData.timeSlot) && (
+                            <div className="mt-2 rounded-card border border-green-200 bg-green-50 px-3 py-2 text-[11px] text-green-700 font-semibold">
+                              🎁 Chỉ áp dụng ưu đãi cao nhất: {formatPromotionText(getBestPromotion(formData.timeSlot))}.
+                            </div>
+                          )}
                           {bookedSlots.length > 0 && (
                             <p className="text-[10px] text-muted mt-1">🔒 Các khung giờ có ký hiệu đã được đặt, vui lòng chọn khung giờ khác.</p>
                           )}
                         </div>
                       </div>
                       {formData.date && (() => {
-                        const today = new Date()
-                        today.setHours(0, 0, 0, 0)
-                        const selected = new Date(formData.date)
-                        selected.setHours(0, 0, 0, 0)
-                        const diffTime = selected - today
-                        const diffDays = diffTime / (1000 * 60 * 60 * 24)
-                        const isValid = diffDays >= 1
-                        
+                        const appliedPromotion = getBestPromotion()
+                        if (!appliedPromotion) return null
                         return (
-                          <div className={`p-3 rounded-card border text-xs leading-relaxed space-y-1.5 mt-2.5 ${
-                            isValid 
-                              ? 'bg-green-50 text-green-700 border-green-200' 
-                              : 'bg-amber-50 text-amber-700 border-amber-200'
-                          }`}>
+                          <div className="p-3 rounded-card border text-xs leading-relaxed space-y-1.5 mt-2.5 bg-green-50 text-green-700 border-green-200">
                             <div className="flex items-center gap-1.5 font-bold text-xs">
-                              <span>{isValid ? '🎉 Ưu Đãi Đặt Trước Hợp Lệ!' : '💡 Ưu Đãi Đặt Lịch Trước'}</span>
+                              <span>🎉 Đã chọn ưu đãi cao nhất</span>
                             </div>
                             <p className="text-[11px] text-text-light">
-                              {isValid 
-                                ? `Bạn được giảm ngay 10% trên tổng hóa đơn dịch vụ ${selectedService.title}!` 
-                                : `Đặt lịch hẹn trước ít nhất 24 giờ (từ ngày mai trở đi) để nhận ưu đãi giảm giá 10% trên tổng hóa đơn.`}
+                              {formatPromotionText(appliedPromotion)} cho dịch vụ {selectedService.title}. Các ưu đãi khác không được cộng dồn.
                             </p>
-                            {isValid && selectedService.id === 'home_service' && (
+                            {selectedService.id === 'home_service' && (
                               <div className="font-semibold text-xs border-t border-dashed border-green-200 pt-1.5 flex justify-between items-center">
                                 <span>Giá tạm tính dịch vụ tại nhà:</span>
                                 <div className="text-right">
                                   <span className="line-through text-[10px] text-muted mr-1.5">200.000đ</span>
-                                  <span className="text-accent text-sm font-bold">180.000đ</span>
+                                  <span className="text-accent text-sm font-bold">{(200000 * (1 - appliedPromotion.effectiveDiscount / 100)).toLocaleString('vi-VN')}đ</span>
                                 </div>
                               </div>
                             )}
@@ -585,24 +657,26 @@ const Services = () => {
                   </div>
                 </div>
 
-                <div className="pt-2 flex gap-4">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedService(null)}
-                    className="flex-1 py-3.5 rounded-pill border border-border-light text-sm font-semibold text-brown-dark hover:bg-bg-light transition-colors"
-                  >
-                    {t('cancel')}
-                  </button>
+                <div className="space-y-3 pt-2">
                   {bookError && (
-                    <p className="text-xs text-red-500 text-center w-full">{bookError}</p>
+                    <p className="text-xs text-red-600 font-semibold bg-red-50 border border-red-200 rounded-card px-3 py-2 text-center w-full">{bookError}</p>
                   )}
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="flex-1 py-3.5 rounded-pill bg-primary hover:bg-secondary text-white text-sm font-semibold shadow-red transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-                  >
-                    {submitting ? 'Đang gửi...' : t('confirmBooking')}
-                  </button>
+                  <div className="flex gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedService(null)}
+                      className="flex-1 py-3.5 rounded-pill border border-border-light text-sm font-semibold text-brown-dark hover:bg-bg-light transition-colors"
+                    >
+                      {t('cancel')}
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={submitting}
+                      className="flex-1 py-3.5 rounded-pill bg-primary hover:bg-secondary text-white text-sm font-semibold shadow-red transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {submitting ? 'Đang gửi...' : t('confirmBooking')}
+                    </button>
+                  </div>
                 </div>
               </form>
             )}

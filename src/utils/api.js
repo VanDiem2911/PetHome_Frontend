@@ -23,7 +23,18 @@ export const bookAppointment = async (appointmentData) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(appointmentData),
   })
-  if (!response.ok) throw new Error('Failed to book appointment')
+  if (!response.ok) {
+    let errMsg = 'Failed to book appointment'
+    try {
+      const errData = await response.json()
+      if (errData && errData.message) {
+        errMsg = errData.message
+      }
+    } catch (e) {
+      // Ignore parsing error
+    }
+    throw new Error(errMsg)
+  }
   return response.json()
 }
 
@@ -57,5 +68,17 @@ export const submitContact = async (contactData) => {
 export const fetchNews = async () => {
   const response = await fetch(`${API_BASE_URL}/news`)
   if (!response.ok) throw new Error('Failed to fetch news')
+  return response.json()
+}
+
+export const fetchServices = async () => {
+  const response = await fetch(`${API_BASE_URL}/services`)
+  if (!response.ok) throw new Error('Failed to fetch services')
+  return response.json()
+}
+
+export const fetchPromotions = async (forBooking = false) => {
+  const response = await fetch(`${API_BASE_URL}/promotions${forBooking ? '?forBooking=true' : ''}`)
+  if (!response.ok) throw new Error('Failed to fetch promotions')
   return response.json()
 }
